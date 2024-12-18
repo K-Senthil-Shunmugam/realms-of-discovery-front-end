@@ -5,7 +5,7 @@ stages:
 # Build Stage
 build:
   stage: build
-  image: node:21
+  image: docker:latest
   script:
     # Install dependencies and build the React app
     - npm install
