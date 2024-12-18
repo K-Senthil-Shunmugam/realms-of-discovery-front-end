@@ -1,6 +1,6 @@
 import './App.css';
 import { useState } from 'react';
-import axios from 'axios'; // Make sure Axios is already installed
+import axios from 'axios'; 
 
 function App() {
   const [name, setName] = useState('');
@@ -8,7 +8,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('/add-name', { name });
+      const response = await axios.post('192.168.192.25:5000/add-name', { name });
       if (response.status === 200) {
         alert('Name submitted successfully!');
       } else {
