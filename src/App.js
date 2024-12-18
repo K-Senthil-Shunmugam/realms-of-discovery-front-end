@@ -1,22 +1,23 @@
 import './App.css';
 import { useState } from 'react';
-import axios from 'axios'; 
+import axios from 'axios';
 
 function App() {
   const [name, setName] = useState('');
+  const [message, setMessage] = useState(''); // State to hold the message from Flask
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const response = await axios.post('http://192.168.192.25:5000/add-name', { name });
       if (response.status === 200) {
-        alert('Name submitted successfully!');
+        setMessage(response.data.message); // Update message with the server response
       } else {
-        alert('Failed to submit name.');
+        setMessage('Failed to submit name.');
       }
     } catch (error) {
       console.error('Error:', error);
-      alert('An error occurred while submitting the name.');
+      setMessage('An error occurred while submitting the name.');
     }
   };
 
@@ -35,6 +36,7 @@ function App() {
             Submit
           </button>
         </form>
+        {message && <p>{message}</p>} {/* Display the message */}
       </header>
     </div>
   );
