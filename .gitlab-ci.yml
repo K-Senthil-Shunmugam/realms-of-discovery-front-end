@@ -7,9 +7,6 @@ build:
   stage: build
   image: docker:latest
   script:
-    # Install dependencies and build the React app
-    - npm install
-    - npm run build
     # Build Docker image with self-hosted GitLab Container Registry URL
     - docker build -t 192.168.192.25:1234/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/front-end:$CI_COMMIT_REF_NAME .
     - echo "Build Successful"
