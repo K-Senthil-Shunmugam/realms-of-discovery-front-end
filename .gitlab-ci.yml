@@ -18,9 +18,8 @@ deploy:
   tags:
     - general-shell
   script:
-   
-    # Define container name
-    - CONTAINER_NAME="$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME"
+    # Define container name (use a consistent naming format for the container)
+    - CONTAINER_NAME="$CI_PROJECT_NAME-$CI_COMMIT_REF_NAME"
 
     # Remove any existing container with the same name (force removal if running)
     - docker ps -a -q --filter "name=$CONTAINER_NAME" | xargs -r docker rm -f
@@ -28,9 +27,10 @@ deploy:
     # Run the new container with the specified container name and exposed port
     - docker run -d --name $CONTAINER_NAME -p 3000:3000 --restart unless-stopped $CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
 
+    # Optionally, remove dangling images after deploy
     - docker image prune -a -f
 
-    # Deploy to a server 
+    # Verify if the container is running
     - docker ps
   only:
     - main  # Trigger deploy only when changes are pushed to the main branch
