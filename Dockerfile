@@ -32,5 +32,8 @@ COPY . .
 # Expose port for React dev server
 EXPOSE 3000
 
-# Start React's development server (by default it runs on port 3000)
+# Configure React to listen on all network interfaces (0.0.0.0)
+ENV HOST=0.0.0.0
+
+# Start React's development server
 CMD ["npm", "start"]
