@@ -5,6 +5,8 @@ stages:
 # Build Stage
 build:
   stage: build
+  tags: 
+    - general-shell
   script:
     # Build Docker image 
     - docker build -t $CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME-front-end:$CI_COMMIT_REF_NAME .
