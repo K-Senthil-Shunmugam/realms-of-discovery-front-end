@@ -1,5 +1,6 @@
 import './App.css';
 import { useState } from 'react';
+import axios from 'axios'; // Make sure Axios is already installed
 
 function App() {
   const [name, setName] = useState('');
@@ -7,14 +8,8 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch('/add-name', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name }),
-      });
-      if (response.ok) {
+      const response = await axios.post('/add-name', { name });
+      if (response.status === 200) {
         alert('Name submitted successfully!');
       } else {
         alert('Failed to submit name.');
