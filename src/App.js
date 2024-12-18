@@ -8,7 +8,7 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('192.168.192.25:5000/add-name', { name });
+      const response = await axios.post('http://192.168.192.25:5000/add-name', { name });
       if (response.status === 200) {
         alert('Name submitted successfully!');
       } else {
