@@ -26,7 +26,9 @@ deploy:
     - docker ps -a -q --filter "name=$CONTAINER_NAME" | xargs -r docker rm -f
 
     # Run the new container with the specified container name and exposed port
-    - docker run -d --name $CONTAINER_NAME -p 3000:3000 $CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME-front-end:$CI_COMMIT_REF_NAME
+    - docker run -d --name $CONTAINER_NAME -p 3000:3000 --restart unless-stopped   $CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME-front-end:$CI_COMMIT_REF_NAME
+
+    - docker image prune -a -f
 
     # Deploy to a server 
     - docker ps
