@@ -1,23 +1,36 @@
-# Build the app
+# Build Stage
 FROM node:21 AS build
 
 WORKDIR /app
 
+# Copy package.json and package-lock.json (or yarn.lock)
 COPY package*.json ./
 
+# Install dependencies
 RUN npm install
 
+# Copy the rest of the application
 COPY . .
 
+# Build the React app (optional, only needed for production builds)
 RUN npm run build
 
-# Setup NGINX
+# Development Stage (instead of using NGINX, we'll use React's dev server)
+FROM node:21 AS dev
 
-FROM nginx:alpine
+WORKDIR /app
 
-COPY --from=build /app/build /usr/share/nginx/html
+# Copy package.json and package-lock.json
+COPY package*.json ./
 
-EXPOSE 80
+# Install dependencies
+RUN npm install
 
-CMD ["nginx", "-g", "dameon off;"]
+# Copy the rest of the application
+COPY . .
 
+# Expose port for React dev server
+EXPOSE 3000
+
+# Start React's development server (by default it runs on port 3000)
+CMD ["npm", "start"]
