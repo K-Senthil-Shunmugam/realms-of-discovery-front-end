@@ -5,12 +5,10 @@ stages:
 # Build Stage
 build:
   stage: build
-  image: docker:latest
   script:
     # Build Docker image 
-    
-    - sudo docker build -t 192.168.192.25:1234/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/front-end:$CI_COMMIT_REF_NAME .
-    - echo "Build Successful"
+    - docker build -t $CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME-front-end:$CI_COMMIT_REF_NAME .
+    - echo "Build Successful and container created"
 
 # Deploy Stage
 deploy:
@@ -18,11 +16,17 @@ deploy:
   script:
     # Login to the self-hosted GitLab Container Registry
     - echo $CI_JOB_TOKEN | docker login -u $CI_REGISTRY_USER --password-stdin 192.168.192.25:1234
-    # Push the Docker image to the self-hosted GitLab Container Registry
-    - docker push 192.168.192.25:1234/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/front-end:$CI_COMMIT_REF_NAME
+   
+    # Define container name
+    - CONTAINER_NAME="$CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME-front-end"
+
+    # Remove any existing container with the same name (force removal if running)
+    - docker ps -a -q --filter "name=$CONTAINER_NAME" | xargs -r docker rm -f
+
+    # Run the new container with the specified container name and exposed port
+    - docker run -d --name $CONTAINER_NAME -p 80:80 $CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME-front-end:$CI_COMMIT_REF_NAME
 
     # Deploy to a server 
-    - echo "Container Created"
-    #- ssh gitlab-runner@192.168.192.25 "docker pull 192.168.192.25:1234/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/my-react-app-image:$CI_COMMIT_REF_NAME && docker run -d -p 80:80 192.168.192.25:1234/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/my-react-app-image:$CI_COMMIT_REF_NAME"
+    - echo "Container Started"
   only:
     - main  # Trigger deploy only when changes are pushed to the main branch
