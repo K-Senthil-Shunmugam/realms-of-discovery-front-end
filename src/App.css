@@ -1,23 +1,76 @@
-.App-input {
-  padding: 10px;
-  font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  width: 250px;
+/* App.css */
+
+/* Overall page styling */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
   text-align: center;
-  margin-bottom: 10px;
 }
 
-.App-button {
-  padding: 10px 20px;
+/* Main container for centering the content */
+.App {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
+}
+
+/* Header */
+.App-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Input field styling */
+.App-input {
+  padding: 10px;
+  margin: 20px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 280px;
   font-size: 16px;
-  color: white;
+  box-sizing: border-box;
+}
+
+.App-input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Button styling */
+.App-button {
   background-color: #007bff;
+  color: #fff;
   border: none;
+  padding: 10px 20px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 16px;
+  width: 100%;
+  max-width: 280px;
+  transition: background-color 0.3s;
 }
 
 .App-button:hover {
   background-color: #0056b3;
 }
+
+/* Message styling */
+p {
+  margin-top: 20px;
+  color: #333;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
