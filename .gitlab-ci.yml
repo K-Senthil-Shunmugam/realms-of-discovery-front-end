@@ -8,7 +8,8 @@ build:
   image: docker:latest
   script:
     # Build Docker image 
-    - docker build -t 192.168.192.25:1234/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/front-end:$CI_COMMIT_REF_NAME .
+    
+    - sudo docker build -t 192.168.192.25:1234/$CI_PROJECT_NAMESPACE/$CI_PROJECT_NAME/front-end:$CI_COMMIT_REF_NAME .
     - echo "Build Successful"
 
 # Deploy Stage
