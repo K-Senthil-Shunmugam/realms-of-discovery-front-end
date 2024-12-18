@@ -27,6 +27,6 @@ deploy:
     - docker run -d --name $CONTAINER_NAME -p 80:80 $CI_PROJECT_NAMESPACE-$CI_PROJECT_NAME-front-end:$CI_COMMIT_REF_NAME
 
     # Deploy to a server 
-    - echo "Container Started"
+    - echo docker ps
   only:
     - main  # Trigger deploy only when changes are pushed to the main branch
