@@ -61,7 +61,7 @@
 // /*<Route path="/login" element={<Login />} /> {/* Login Page */
 
 import React from 'react';
-import SignupPage from './SignupPage';
+import SignupPage from './Components/SignupPage';
 import './App.css';
 
 function App() {
