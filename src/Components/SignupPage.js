@@ -1,106 +1,58 @@
-
-import React, { useState } from 'react';
-import './SignupPage.css';
+import React from "react";
+import * as Components from './Components';
 
 function SignupPage() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [passwordStrength, setPasswordStrength] = useState('');
-  const [errorMessage, setErrorMessage] = useState('');
+    const [signIn, toggle] = React.useState(true);
+    return(
+        <Components.Container>
+            <Components.SignUpContainer signinIn={signIn}>
+                <Components.Form>
+                    <Components.Title>Create Account</Components.Title>
+                    <Components.Input type='text' placeholder='Name' />
+                    <Components.Input type='email' placeholder='Email' />
+                    <Components.Input type='password' placeholder='Password' />
+                    <Components.Button>Sign Up</Components.Button>
+                </Components.Form>
+            </Components.SignUpContainer>
 
-  const validatePassword = (password) => {
-    const lengthRequirement = password.length >= 8;
-    const capitalRequirement = /[A-Z]/.test(password);
-    const symbolRequirement = /[!@#$%^&*(),.?":{}|<>]/.test(password);
-    const numberRequirement = /[0-9]/.test(password);
+            <Components.SignInContainer signinIn={signIn}>
+                <Components.Form>
+                    <Components.Title>Sign in</Components.Title>
+                    <Components.Input type='email' placeholder='Email' />
+                    <Components.Input type='password' placeholder='Password' />
+                    <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
+                    <Components.Button>Sign In</Components.Button>
+                </Components.Form>
+            </Components.SignInContainer>
 
-    if (!lengthRequirement) {
-      setErrorMessage('Password must be at least 8 characters long.');
-      return 'weak';
-    }
+            <Components.OverlayContainer signinIn={signIn}>
+                <Components.Overlay signinIn={signIn}>
 
-    if (capitalRequirement && symbolRequirement && numberRequirement) {
-      setErrorMessage('');
-      return 'strong';
-    }
+                    <Components.LeftOverlayPanel signinIn={signIn}>
+                        <Components.Title>Welcome Back!</Components.Title>
+                        <Components.Paragraph>
+                            To keep connected with us please login with your personal info
+                        </Components.Paragraph>
+                        <Components.GhostButton onClick={() => toggle(true)}>
+                            Sign In
+                        </Components.GhostButton>
+                    </Components.LeftOverlayPanel>
 
-    if (capitalRequirement || symbolRequirement || numberRequirement) {
-      setErrorMessage('');
-      return 'moderate';
-    }
+                    <Components.RightOverlayPanel signinIn={signIn}>
+                        <Components.Title>Hello, Friend!</Components.Title>
+                        <Components.Paragraph>
+                            Enter Your personal details and start journey with us
+                        </Components.Paragraph>
+                        <Components.GhostButton onClick={() => toggle(false)}>
+                            Sign Up
+                        </Components.GhostButton> 
+                    </Components.RightOverlayPanel>
 
-    setErrorMessage('Password must contain a capital letter, a symbol, and a number.');
-    return 'weak';
-  };
+                </Components.Overlay>
+            </Components.OverlayContainer>
 
-  const handlePasswordChange = (e) => {
-    const newPassword = e.target.value;
-    setPassword(newPassword);
-    const strength = validatePassword(newPassword);
-    setPasswordStrength(strength);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (passwordStrength !== 'strong') {
-      setErrorMessage('Please choose a strong password before signing up.');
-      return;
-    }
-    alert('Signup successful!');
-  };
-
-  return (
-    <div className="signup-container">
-      <header className="signup-header">
-        <h1>Signup Page</h1>
-      </header>
-      <form className="signup-form" onSubmit={handleSubmit}>
-        <label>
-          Username:
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            placeholder="Enter username"
-            required
-          />
-        </label>
-        <label>
-          Password:
-          <input
-            type="password"
-            value={password}
-            onChange={handlePasswordChange}
-            placeholder="Enter password"
-            required
-          />
-        </label>
-        {passwordStrength && (
-          <div className={`password-strength ${passwordStrength}`}>
-            {passwordStrength === 'weak' && <span>Weak password</span>}
-            {passwordStrength === 'moderate' && <span>Moderate password</span>}
-            {passwordStrength === 'strong' && <span>Strong password</span>}
-          </div>
-        )}
-        <div className="password-constraints">
-          <strong>Password Constraints:</strong>
-          <ul>
-            <li>Must be at least 8 characters long.</li>
-            <li>Must contain at least one capital letter.</li>
-            <li>Must contain at least one symbol (e.g., @, #, $, etc.).</li>
-            <li>Must contain at least one number.</li>
-          </ul>
-        </div>
-        {errorMessage && <p className="error-message">{errorMessage}</p>}
-        <button type="submit" className="signup-button">
-          Submit
-        </button>
-      </form>
-      <div className="login-link">
-        Already have an account? <a href="/login">Login here</a>
-      </div>
-    </div>
-  );
+        </Components.Container>
+    )
 }
 
 export default SignupPage;
