@@ -1,8 +1,11 @@
 import './App.css';
 import { useState } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import axios from 'axios';
+import Signup from './SignupPage';
+//import Login from './Login';
 
-function App() {
+function Home() {
   const [name, setName] = useState('');
   const [message, setMessage] = useState(''); // State to hold the message from Flask
 
@@ -43,4 +46,16 @@ function App() {
   );
 }
 
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} /> {/* Main Home Page */}
+        <Route path="/signupPage" element={<Signup />} /> {/* Signup Page */}
+      </Routes>
+    </Router>
+  );
+}
+
 export default App;
+/*<Route path="/login" element={<Login />} /> {/* Login Page */
