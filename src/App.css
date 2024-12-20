@@ -177,3 +177,19 @@ p {
 .login-link a:hover {
   text-decoration: underline;
 }
+/* Password Constraints Styling */
+.password-constraints {
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #555;
+}
+
+.password-constraints ul {
+  list-style: square;
+  padding-left: 20px;
+  margin-top: 10px;
+}
+
+.password-constraints ul li {
+  margin-bottom: 5px;
+}

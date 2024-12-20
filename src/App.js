@@ -128,6 +128,15 @@ function SignupPage() {
             {passwordStrength === 'strong' && <span>Strong password</span>}
           </div>
         )}
+        <div className="password-constraints">
+          <strong>Password Constraints:</strong>
+          <ul>
+            <li>Must be at least 8 characters long.</li>
+            <li>Must contain at least one capital letter.</li>
+            <li>Must contain at least one symbol (e.g., @, #, $, etc.).</li>
+            <li>Must contain at least one number.</li>
+          </ul>
+        </div>
         {errorMessage && <p className="error-message">{errorMessage}</p>}
         <button type="submit" className="signup-button">
           Submit
