@@ -45,115 +45,99 @@
 
 // export default App;
 
-import React, { useState } from "react";
-import "./SignupPage.css";
+import React, { useState } from 'react';
+import './SignupPage.css';
 
-const SignupPage = () => {
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [usernameError, setUsernameError] = useState(false);
-  const [passwordError, setPasswordError] = useState(false);
-  const [formError, setFormError] = useState(false);
-  const [passwordStrength, setPasswordStrength] = useState("");
+function SignupPage() {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [passwordStrength, setPasswordStrength] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
 
-  // Debounce function
-  const debounce = (func, delay) => {
-    let timer;
-    return (...args) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => func(...args), delay);
-    };
+  const validatePassword = (password) => {
+    const lengthRequirement = password.length >= 8;
+    const capitalRequirement = /[A-Z]/.test(password);
+    const symbolRequirement = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+    const numberRequirement = /[0-9]/.test(password);
+
+    if (!lengthRequirement) {
+      setErrorMessage('Password must be at least 8 characters long.');
+      return 'weak';
+    }
+
+    if (capitalRequirement && symbolRequirement && numberRequirement) {
+      setErrorMessage('');
+      return 'strong';
+    }
+
+    if (capitalRequirement || symbolRequirement || numberRequirement) {
+      setErrorMessage('');
+      return 'moderate';
+    }
+
+    setErrorMessage('Password must contain a capital letter, a symbol, and a number.');
+    return 'weak';
   };
 
-  // Password strength checker
-  const checkPasswordStrength = debounce((value) => {
-    if (value.length < 6) {
-      setPasswordStrength("weak");
-    } else if (value.length < 10) {
-      setPasswordStrength("medium");
-    } else {
-      setPasswordStrength("strong");
-    }
-  }, 300);
+  const handlePasswordChange = (e) => {
+    const newPassword = e.target.value;
+    setPassword(newPassword);
+    const strength = validatePassword(newPassword);
+    setPasswordStrength(strength);
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    let hasError = false;
-
-    if (!username) {
-      setUsernameError(true);
-      hasError = true;
-    } else {
-      setUsernameError(false);
+    if (passwordStrength !== 'strong') {
+      setErrorMessage('Please choose a strong password before signing up.');
+      return;
     }
-
-    if (!password) {
-      setPasswordError(true);
-      hasError = true;
-    } else {
-      setPasswordError(false);
-    }
-
-    if (hasError) {
-      setFormError(true);
-    } else {
-      setFormError(false);
-      alert("Form submitted successfully!");
-      // Add logic for submission, e.g., API call
-    }
+    alert('Signup successful!');
   };
 
   return (
     <div className="signup-container">
-      <div className="header">
-        <h1>Signup</h1>
-      </div>
-      <form onSubmit={handleSubmit} className="signup-form">
-        <div className="input-group">
-          <label htmlFor="username">Username</label>
+      <header className="signup-header">
+        <h1>Signup Page</h1>
+      </header>
+      <form className="signup-form" onSubmit={handleSubmit}>
+        <label>
+          Username:
           <input
             type="text"
-            id="username"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            placeholder="Enter your username"
+            placeholder="Enter username"
+            required
           />
-          {usernameError && (
-            <p className="error-message">Username is required.</p>
-          )}
-        </div>
-        <div className="input-group">
-          <label htmlFor="password">Password</label>
+        </label>
+        <label>
+          Password:
           <input
             type="password"
-            id="password"
             value={password}
-            onChange={(e) => {
-              setPassword(e.target.value);
-              checkPasswordStrength(e.target.value);
-            }}
-            placeholder="Enter your password"
+            onChange={handlePasswordChange}
+            placeholder="Enter password"
+            required
           />
-          <div className="password-strength">
-            <div className={`strength-bar ${passwordStrength}`}></div>
+        </label>
+        {passwordStrength && (
+          <div className={`password-strength ${passwordStrength}`}>
+            {passwordStrength === 'weak' && <span>Weak password</span>}
+            {passwordStrength === 'moderate' && <span>Moderate password</span>}
+            {passwordStrength === 'strong' && <span>Strong password</span>}
           </div>
-          {passwordError && (
-            <p className="error-message">Password is required.</p>
-          )}
-        </div>
-        <button type="submit">Sign Up</button>
-        {formError && (
-          <p className="error-message">Please fix the errors above.</p>
         )}
+        {errorMessage && <p className="error-message">{errorMessage}</p>}
+        <button type="submit" className="signup-button">
+          Submit
+        </button>
       </form>
       <div className="login-link">
-        <p>
-          Already have an account? <a href="/login">Login here</a>
-        </p>
+        Already have an account? <a href="/login">Login here</a>
       </div>
     </div>
   );
-};
+}
 
 export default SignupPage;
