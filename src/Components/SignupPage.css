@@ -1,10 +1,27 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,800");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #40152d; /* Deep purple from the palette */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  height: 100vh;
+  margin: -20px 0 50px;
+}
+
 /* Container styling */
 .signup-container {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh; /* Full height of the viewport */
-  background-color: #f9f9f9; /* Optional: background color */
+  background-color: #2b0e24; /* Darker purple from the palette */
   padding: 20px; /* Optional: add padding for small screens */
   box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
@@ -15,14 +32,14 @@
 }
 
 .signup-header h1 {
-  color: #333;
+  color: #ff7597; /* Vibrant pink from the palette */
 }
 
 .signup-form {
-  background: #fff;
-  padding: 100%;
+  background: #731942; /* Mid-tone purple from the palette */
+  padding: 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   width: 100%;
   max-width: 400px;
 }
@@ -31,16 +48,18 @@
   display: block;
   font-size: 16px;
   margin-bottom: 8px;
-  color: #333;
+  color: #ff7597; /* Vibrant pink from the palette */
 }
 
 .signup-form input {
   width: 100%;
   padding: 10px;
   margin-bottom: 20px;
-  border: 1px solid #ccc;
+  border: 1px solid #ff7597; /* Vibrant pink border */
   border-radius: 4px;
   font-size: 14px;
+  background-color: #4d102b; /* Slightly lighter purple */
+  color: #ffffff;
 }
 
 .signup-form .password-strength {
@@ -51,19 +70,19 @@
 }
 
 .password-strength.weak {
-  color: red;
+  color: #ff5733; /* Bright red */
 }
 
 .password-strength.moderate {
-  color: orange;
+  color: #ffc300; /* Golden yellow */
 }
 
 .password-strength.strong {
-  color: green;
+  color: #00ff7f; /* Bright green */
 }
 
 .error-message {
-  color: red;
+  color: #ff5733; /* Bright red */
   font-size: 14px;
   margin-bottom: 15px;
 }
@@ -71,8 +90,8 @@
 .signup-button {
   width: 100%;
   padding: 10px;
-  background-color: #007bff;
-  color: #fff;
+  background-color: #ff7597; /* Vibrant pink */
+  color: #ffffff;
   border: none;
   border-radius: 4px;
   font-size: 16px;
@@ -81,7 +100,7 @@
 }
 
 .signup-button:hover {
-  background-color: #0056b3;
+  background-color: #d6456d; /* Slightly darker pink */
 }
 
 .login-link {
@@ -91,18 +110,19 @@
 }
 
 .login-link a {
-  color: #007bff;
+  color: #ff7597; /* Vibrant pink */
   text-decoration: none;
 }
 
 .login-link a:hover {
   text-decoration: underline;
 }
+
 /* Password Constraints Styling */
 .password-constraints {
   margin-bottom: 20px;
   font-size: 14px;
-  color: #555;
+  color: #d2a0b6; /* Light pinkish purple */
 }
 
 .password-constraints ul {
@@ -113,4 +133,5 @@
 
 .password-constraints ul li {
   margin-bottom: 5px;
+  color: #d2a0b6; /* Light pinkish purple */
 }
