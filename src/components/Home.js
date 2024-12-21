@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import axios from 'axios';
+import './components/Home.css';
 
 const Home = () => {
   const navigate = useNavigate();
