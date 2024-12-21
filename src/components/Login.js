@@ -8,10 +8,38 @@ const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState(null);
+  const [usernameError, setUsernameError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const navigate = useNavigate();
   const [, setCookie] = useCookies(['accountID']);
 
+  // Validate inputs
+  const validateInputs = () => {
+    let isValid = true;
+    setUsernameError('');
+    setPasswordError('');
+
+    if (!username.trim()) {
+      setUsernameError('Username is required.');
+      isValid = false;
+    }
+
+    if (!password.trim()) {
+      setPasswordError('Password is required.');
+      isValid = false;
+    } else if (password.length < 6) {
+      setPasswordError('Password must be at least 6 characters long.');
+      isValid = false;
+    }
+
+    return isValid;
+  };
+
   const handleLogin = async () => {
+    if (!validateInputs()) {
+      return; // Don't proceed with login if inputs are invalid
+    }
+
     try {
       const response = await axios.post('http://192.168.192.25:5000/auth/login', {
         username,
@@ -36,18 +64,32 @@ const Login = () => {
           placeholder="Username"
           value={username}
           onChange={(e) => setUsername(e.target.value)}
-          className="input-field"
+          className={`input-field ${usernameError ? 'input-error' : ''}`}
         />
+        {usernameError && <p className="error-msg">{usernameError}</p>}
+        
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          className="input-field"
+          className={`input-field ${passwordError ? 'input-error' : ''}`}
         />
-        <button onClick={handleLogin} className="login-btn">Login</button>
+        {passwordError && <p className="error-msg">{passwordError}</p>}
+        
+        <button 
+          onClick={handleLogin} 
+          className="login-btn" 
+          disabled={!username || !password || usernameError || passwordError}
+        >
+          Login
+        </button>
+        
         {error && <p className="error-msg">{error}</p>}
-        <p className="signup-link">Don't have an account? <a href="/signup">Sign Up</a></p>
+        
+        <p className="signup-link">
+          Don't have an account? <a href="/signup">Sign Up</a>
+        </p>
       </div>
     </div>
   );
