@@ -8,9 +8,9 @@ const Home = () => {
   const navigate = useNavigate();
   const [cookies, removeCookie] = useCookies(['accountID']);
   const username = cookies.username;
+
   const handleLogout = async () => {
     try {
-      
       // Send the accountID to the backend in the body of the POST request
       await axios.post('http://192.168.192.25:5000/auth/logout', {
         accountID: cookies.accountID, // Include the accountID in the request body
@@ -28,10 +28,12 @@ const Home = () => {
   };
 
   return (
-    <div>
-      <h1>Welcome back {username}!</h1>
-      <p>You are logged in!</p>
-      <button onClick={handleLogout}>Logout</button>
+    <div className="home-container">
+      <div className="home-box">
+        <h1>Welcome back {username}!</h1>
+        <p>You are logged in!</p>
+        <button onClick={handleLogout} className="logout-btn">Logout</button>
+      </div>
     </div>
   );
 };
