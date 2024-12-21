@@ -17,7 +17,7 @@ const Login = () => {
         username,
         password,
       });
-      console.log(response.data.accountID);
+      console.log(response.data);
       // Set the accountID cookie upon successful login
       setCookie('accountID', response.data.accountID, { path: '/' });
 
