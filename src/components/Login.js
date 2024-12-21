@@ -1,47 +1,51 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import { useHistory } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
+import { useCookies } from 'react-cookie';
 
-function Login() {
+const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const history = useHistory();
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
+  const [, setCookie] = useCookies(['accountID']);
 
-  const handleLogin = async (e) => {
-    e.preventDefault();
+  const handleLogin = async () => {
     try {
       const response = await axios.post('http://localhost:5000/auth/login', {
         username,
-        password
+        password,
       });
-      if (response.status === 200) {
-        history.push('/home');  // Redirect to homepage upon successful login
-      }
-    } catch (error) {
-      alert('Login failed');
+
+      // Set the accountID cookie upon successful login
+      setCookie('accountID', response.data.accountID, { path: '/' });
+
+      navigate('/'); // Redirect to home page
+    } catch (err) {
+      setError('Invalid username or password');
     }
   };
 
   return (
     <div>
-      <h2>Login</h2>
-      <form onSubmit={handleLogin}>
-        <input
-          type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <button type="submit">Login</button>
-      </form>
+      <h1>Login</h1>
+      <input
+        type="text"
+        placeholder="Username"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+      />
+      <input
+        type="password"
+        placeholder="Password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+      />
+      <button onClick={handleLogin}>Login</button>
+      {error && <p>{error}</p>}
+      <p>Don't have an account? <a href="/signup">Sign Up</a></p>
     </div>
   );
-}
+};
 
 export default Login;
