@@ -7,10 +7,10 @@ import './Home.css';
 const Home = () => {
   const navigate = useNavigate();
   const [cookies, removeCookie] = useCookies(['accountID']);
-
+  console.log(cookies.accountID);
   const handleLogout = async () => {
     try {
-      console.log(cookies.accountID)
+      
       // Send the accountID to the backend in the body of the POST request
       await axios.post('http://192.168.192.25:5000/auth/logout', {
         accountID: cookies.accountID, // Include the accountID in the request body
