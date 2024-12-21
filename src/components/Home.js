@@ -9,12 +9,12 @@ const Home = () => {
 
   const handleLogout = async () => {
     try {
-      // Send the accountID to the backend and remove the cookie
+      // Send the accountID to the backend in the body of the POST request
       await axios.post('http://192.168.192.25:5000/auth/logout', {
-        accountID: cookies.accountID, // Send the accountID in the request body
+        accountID: cookies.accountID, // Include the accountID in the request body
       });
 
-      // Remove the accountID cookie from the client
+      // Remove the accountID cookie on the client-side
       removeCookie('accountID');
 
       // Redirect to the login page
