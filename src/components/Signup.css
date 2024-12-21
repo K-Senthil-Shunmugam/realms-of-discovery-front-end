@@ -31,6 +31,8 @@ body {
   align-items: center;
   width: 100%;
   height: 100%;
+  padding: 10px; /* Added padding for better centering on smaller screens */
+  box-sizing: border-box;
 }
 
 .signup-box {
@@ -38,10 +40,14 @@ body {
   padding: 40px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 320px; /* Adjusted size */
+  width: 100%;
+  max-width: 400px; /* Set max width to ensure the box doesn't stretch too much */
   text-align: center;
   border: 4px solid #ff4d6d; /* 8-bit solid border */
   background: rgba(128, 15, 47, 0.9); /* Semi-transparent background */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Ensures children are centered */
 }
 
 h1 {
@@ -131,4 +137,27 @@ h1 {
 .login-link a:hover {
   text-decoration: underline;
   color: #ff4d6d; /* Highlight color on hover */
+}
+
+/* Media Queries for responsiveness */
+@media (max-width: 500px) {
+  .signup-box {
+    padding: 30px; /* Reduce padding for smaller screens */
+  }
+
+  h1 {
+    font-size: 28px; /* Reduce font size on small screens */
+  }
+
+  .input-field {
+    font-size: 16px; /* Slightly smaller input text */
+  }
+
+  .signup-btn {
+    font-size: 16px; /* Smaller button font size */
+  }
+
+  .login-link {
+    font-size: 12px; /* Smaller text for the signup link */
+  }
 }
