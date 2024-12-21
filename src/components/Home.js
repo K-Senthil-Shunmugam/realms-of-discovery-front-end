@@ -17,8 +17,8 @@ const Home = () => {
       });
 
       // Remove the accountID cookie on the client-side
-      removeCookie('accountID');
-      removeCookie('username');
+      setCookie('accountID', null, { path: '/' });
+      setCookie('username', null, { path: '/' });
 
       // Redirect to the login page
       navigate('/login');
