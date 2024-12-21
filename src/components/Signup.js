@@ -57,6 +57,14 @@ const Signup = () => {
     }
   };
 
+  // Update email error when the user changes the email field
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    if (emailError) {
+      setEmailError(''); // Clear error message when user starts typing
+    }
+  };
+
   return (
     <div className="signup-container">
       <div className="signup-box">
@@ -73,7 +81,7 @@ const Signup = () => {
           type="email"
           placeholder="Email"
           value={email}
-          onChange={(e) => setEmail(e.target.value)}
+          onChange={handleEmailChange}  
           className={`input-field ${emailError ? 'input-error' : ''}`}
         />
         {emailError && <p className="error-msg">{emailError}</p>}
