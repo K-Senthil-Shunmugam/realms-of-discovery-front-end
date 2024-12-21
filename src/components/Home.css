@@ -44,7 +44,7 @@ body {
     background: rgba(128, 15, 47, 0.9); /* Semi-transparent background */
   }
   
-  h1 {
+  .h1-welcome-text {
     color: #ff4d6d;
     font-size: 20px; /* Adjusted size for clarity */
     margin-bottom: 20px;
