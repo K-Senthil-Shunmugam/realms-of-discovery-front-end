@@ -13,7 +13,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={cookies.accountID ? <Home /> : <Navigate to="/login" />}
+          element={cookies.accountID === null ? <Navigate to="/login" /> : <Home />}
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
@@ -23,3 +23,4 @@ function App() {
 }
 
 export default App;
+
