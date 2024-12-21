@@ -12,9 +12,6 @@ RUN npm install
 # Copy the rest of the application
 COPY . .
 
-# Build the React app (optional, only needed for production builds)
-RUN npm run build
-
 # Development Stage (instead of using NGINX, we'll use React's dev server)
 FROM node:21 AS dev
 
