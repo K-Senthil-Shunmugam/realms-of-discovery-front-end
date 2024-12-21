@@ -9,7 +9,7 @@ const Home = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.post('http://192.168.192.25:5000/auth/logout');
+      await axios.post('http://192.168.192.25:5000/auth/logout', {}, { withCredentials: true });
       removeCookie('accountID'); // Remove the accountID cookie
       navigate('/login'); // Redirect to login page
     } catch (err) {
