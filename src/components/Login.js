@@ -19,7 +19,7 @@ const Login = () => {
       });
       // Set the accountID cookie upon successful login
       setCookie('accountID', response.data.accountID, { path: '/' });
-      setCookie('username',username,{path: '/'});
+      setCookie('username', username, { path: '/' });
       
       navigate('/'); // Redirect to home page
     } catch (err) {
@@ -28,23 +28,27 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h1>Login</h1>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button onClick={handleLogin}>Login</button>
-      {error && <p>{error}</p>}
-      <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+    <div className="login-container">
+      <div className="login-box">
+        <h1>Login</h1>
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          className="input-field"
+        />
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          className="input-field"
+        />
+        <button onClick={handleLogin} className="login-btn">Login</button>
+        {error && <p className="error-msg">{error}</p>}
+        <p className="signup-link">Don't have an account? <a href="/signup">Sign Up</a></p>
+      </div>
     </div>
   );
 };
