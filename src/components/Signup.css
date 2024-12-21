@@ -75,6 +75,10 @@ h1 {
   background-color: #ff758f; /* Lighten on focus */
 }
 
+.input-error {
+  border: 2px solid #ff758f;
+}
+
 .signup-btn {
   width: 100%;
   padding: 14px;
@@ -89,6 +93,12 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.signup-btn:disabled {
+  background-color: #c9184a;
+  cursor: not-allowed;
+  opacity: 0.5; /* Greyed-out effect */
 }
 
 .signup-btn:hover {
