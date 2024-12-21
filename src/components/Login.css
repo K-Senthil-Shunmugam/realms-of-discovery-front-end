@@ -1,6 +1,6 @@
 /* Login.css */
 body {
-  font-family: 'Press Start 2P', cursive; /* Retro 8-bit font */
+  font-family: 'Press Start 2P', cursive; /* 8-bit font for all text */
   background-color: #590d22;
   margin: 0;
   padding: 0;
@@ -29,8 +29,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
   width: 100%;
+  height: 100%;
 }
 
 .login-box {
@@ -38,7 +38,7 @@ body {
   padding: 40px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  width: 320px; /* Slightly larger box */
+  width: 320px; /* Adjusted size */
   text-align: center;
   border: 4px solid #ff4d6d; /* 8-bit solid border */
   background: rgba(128, 15, 47, 0.9); /* Semi-transparent background */
@@ -63,7 +63,7 @@ h1 {
   background-color: #c9184a;
   color: white;
   text-align: center;
-  font-family: 'Press Start 2P', cursive; /* Retro 8-bit font */
+  font-family: 'Press Start 2P', cursive; /* 8-bit font for inputs */
   letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
 }
