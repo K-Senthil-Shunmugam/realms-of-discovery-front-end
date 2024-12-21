@@ -20,7 +20,8 @@ const Login = () => {
       console.log(response.data);
       // Set the accountID cookie upon successful login
       setCookie('accountID', response.data.accountID, { path: '/' });
-
+      setCookie('username',username,{path: '/'});
+      
       navigate('/'); // Redirect to home page
     } catch (err) {
       setError('Invalid username or password');
