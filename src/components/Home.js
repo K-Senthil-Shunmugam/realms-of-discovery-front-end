@@ -7,7 +7,7 @@ import './Home.css';
 const Home = () => {
   const navigate = useNavigate();
   const [cookies, removeCookie] = useCookies(['accountID']);
-  console.log(cookies);
+  const username = cookies.username;
   const handleLogout = async () => {
     try {
       
@@ -28,7 +28,7 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Welcome to the Home Page!</h1>
+      <h1>Welcome back {username}!</h1>
       <p>You are logged in!</p>
       <button onClick={handleLogout}>Logout</button>
     </div>
