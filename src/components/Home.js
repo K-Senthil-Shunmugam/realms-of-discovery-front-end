@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useCookies } from 'react-cookie';
 import axios from 'axios';
+import { Link, animateScroll as scroll } from 'react-scroll';  // Import react-scroll
 import './Home.css';
 
 const Home = () => {
@@ -28,27 +29,29 @@ const Home = () => {
 
   return (
     <div className="home-page-body">
+      {/* Navbar with scroll links */}
       <div className="navbar">
-        <button onClick={() => navigate('/home')} className="navbar-btn">Home</button>
-        <button onClick={() => navigate('/about')} className="navbar-btn">About</button>
+        <Link to="welcome-section" smooth={true} duration={500} className="navbar-btn">Home</Link>
+        <Link to="features-section" smooth={true} duration={500} className="navbar-btn">Features</Link>
+        <Link to="team-section" smooth={true} duration={500} className="navbar-btn">Meet the Team</Link>
         <button onClick={handleLogout} className="navbar-btn">Logout</button>
       </div>
 
       <div className="home-container">
         {/* Section 1 */}
-        <section className="welcome-section">
+        <section id="welcome-section" className="welcome-section">
           <h1 className="home-h1-welcome-text">Welcome back {username}!</h1>
           <p className="home-paragraph">You are logged in!</p>
         </section>
 
         {/* Section 2 */}
-        <section className="features-section">
+        <section id="features-section" className="features-section">
           <h2 className="home-h2-section-title">Our Features</h2>
           <p className="home-paragraph">Discover the great features we offer to make your experience better.</p>
         </section>
 
         {/* Section 3 - Meet the Team */}
-        <section className="team-section">
+        <section id="team-section" className="team-section">
           <h2 className="home-h2-section-title">Meet the Team</h2>
           <div className="team-members">
             <div className="team-member-card">
