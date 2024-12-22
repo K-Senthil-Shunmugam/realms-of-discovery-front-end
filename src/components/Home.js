@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useCookies,Cookies  } from 'react-cookie';
+import { useCookies } from 'react-cookie';
 import axios from 'axios';
 import './Home.css';
 
@@ -17,7 +17,9 @@ const Home = () => {
       });
 
       // Remove the accountID cookie on the client-side
-      Cookies.remove('accountDetails');
+      remove('accountDetails'); 
+      remove('username'); 
+      remove('accountID'); 
 
       // Redirect to the login page
       navigate('/login');
