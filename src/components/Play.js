@@ -5,6 +5,7 @@ import './Play.css';
 const Play = () => {
   const [textInput, setTextInput] = useState('');
   const [response, setResponse] = useState(null);
+  const [cookies, remove] = useCookies(['accountDetails']);
 
   const handleInputChange = (event) => {
     setTextInput(event.target.value);
@@ -12,11 +13,8 @@ const Play = () => {
 
   const handleKeyPress = async (event) => {
     if (event.key === 'Enter' && textInput.trim()) {
-      const userId = document.cookie.replace(
-        /(?:(?:^|.*;\s*)userId\s*\=\s*([^;]*).*$)|^.*$/,
-        '$1'
-      );
-
+      const userId = cookies.accountDetails.accountid;
+      console.log(userId);
       const data = { userId, textInput };
 
       try {
