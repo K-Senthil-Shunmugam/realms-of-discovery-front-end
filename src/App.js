@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import Play from './Play'; // import the Play component
+import Play from './components/Play'; // import the Play component
 import { useCookies } from 'react-cookie';
 
 function App() {
