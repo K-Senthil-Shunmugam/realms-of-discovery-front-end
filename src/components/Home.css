@@ -2,22 +2,18 @@
 html {
   scroll-behavior: smooth;
 }
-
-body {
-  margin: 0;
-  padding: 0;
+.home-page-body {
   font-family: 'Press Start 2P', cursive;
   background-color: #590d22;
-}
-
-.home-page-body {
-  background-image: linear-gradient(45deg, #590d22, #800f2f);
-  background-size: 400% 400%;
-  animation: gradientAnimation 10s ease infinite;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100vh;
+  height: 100vh;
+  background-image: linear-gradient(45deg, #590d22, #800f2f);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
 }
 
 @keyframes gradientAnimation {
@@ -64,43 +60,36 @@ body {
   align-items: center;
   width: 100%;
   padding: 20px;
-  flex-grow: 1;
 }
 
 .welcome-section, .features-section, .team-section {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
-  flex: 1; /* Ensure each section takes equal space */
-  padding: 20px;
+  margin-bottom: 40px;
 }
 
 .home-h1-welcome-text {
   color: #ff4d6d;
-  font-size: 2rem; /* Make the font size responsive */
+  font-size: 14px;
   margin-bottom: 20px;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .home-h2-section-title {
   color: #ff4d6d;
-  font-size: 2rem;
+  font-size: 22px;
   margin-bottom: 15px;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .home-paragraph {
   color: white;
-  font-size: 1.2rem;
-  max-width: 800px;
-  margin: 0 auto;
+  font-size: 18px;
 }
 
 .team-members {
   display: flex;
   justify-content: center;
   gap: 20px;
-  flex-wrap: wrap;
-  justify-content: center;
 }
 
 .team-member-card {
@@ -111,7 +100,6 @@ body {
   width: 200px;
   border: 4px solid #ff4d6d;
   background: rgba(128, 15, 47, 0.9);
-  margin-bottom: 20px;
 }
 
 .team-member-img {
@@ -123,79 +111,18 @@ body {
 
 .team-member-name {
   color: #ff4d6d;
-  font-size: 1.5rem;
+  font-size: 20px;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .team-member-links a {
   color: #ff4d6d;
   text-decoration: none;
   margin: 5px;
-  font-size: 1rem;
+  font-size: 14px;
+  font-family: 'Press Start 2P', cursive;
 }
 
 .team-member-links a:hover {
   text-decoration: underline;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .navbar-btn {
-    padding: 10px 15px;
-    font-size: 0.9rem;
-  }
-
-  .home-h1-welcome-text {
-    font-size: 1.5rem;
-  }
-
-  .home-h2-section-title {
-    font-size: 1.5rem;
-  }
-
-  .home-paragraph {
-    font-size: 1rem;
-  }
-
-  .team-member-card {
-    width: 150px;
-  }
-
-  .team-member-name {
-    font-size: 1.2rem;
-  }
-
-  .team-member-links a {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .navbar-btn {
-    padding: 8px 12px;
-    font-size: 0.8rem;
-  }
-
-  .home-h1-welcome-text {
-    font-size: 1.2rem;
-  }
-
-  .home-h2-section-title {
-    font-size: 1.2rem;
-  }
-
-  .home-paragraph {
-    font-size: 0.9rem;
-  }
-
-  .team-member-card {
-    width: 120px;
-  }
-
-  .team-member-name {
-    font-size: 1.1rem;
-  }
-
-  .team-member-links a {
-    font-size: 0.8rem;
-  }
 }
