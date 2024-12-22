@@ -123,9 +123,9 @@ html, body {
 .text-input {
   width: 100%;
   padding: 12px;
-  background-color: #c9184a; /* Background color matches */
+  background-color: #8e0f37; /* Darker shade for the input box */
   border: 2px solid #a4133c;
-  color: #ff4d6d;
+  color: #ffffff; /* White text for better contrast */
   font-size: 1rem;
   font-family: 'Press Start 2P', cursive;
   letter-spacing: 1px;
@@ -133,14 +133,15 @@ html, body {
 }
 
 .text-input::placeholder {
-  color: #ff4d6d;
+  color: #ffcc00; /* Placeholder text color */
 }
 
 .text-input:focus {
-  background-color: #ff758f;
+  background-color: #ff758f; /* Lighten slightly when focused */
   border-color: #ff4d6d;
   box-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff4d6d; /* Glowing effect */
 }
+
 
 /* Placeholder for missing images */
 .play-image, .map-image {
