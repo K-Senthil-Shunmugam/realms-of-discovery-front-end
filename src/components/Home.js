@@ -28,11 +28,13 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container">
-      <div className="home-box">
-        <h1 className="h1-welcome-text">Welcome back {username}!</h1>
-        <p>You are logged in!</p>
-        <button onClick={handleLogout} className="logout-btn">Logout</button>
+    <div className="home-page-body">
+      <div className="home-container">
+        <div className="home-box">
+          <h1 className="home-h1-welcome-text">Welcome back {username}!</h1>
+          <p className="home-paragraph">You are logged in!</p>
+          <button onClick={handleLogout} className="home-logout-btn">Logout</button>
+        </div>
       </div>
     </div>
   );
