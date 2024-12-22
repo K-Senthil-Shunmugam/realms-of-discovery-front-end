@@ -18,7 +18,7 @@ const Home = () => {
 
       // Set the cookies to undefined and set their expiration to the past
       setCookie('accountID', undefined, { path: '/' });
-      setCookie('username', username, { path: '/' });
+      setCookie('username', undefined, { path: '/' });
 
       // Redirect to the login page
       navigate('/login');
