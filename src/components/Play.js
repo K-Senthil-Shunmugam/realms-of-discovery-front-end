@@ -17,7 +17,7 @@ const Play = () => {
       );
 
       const data = { userId, textInput };
-      const response = await fetch('/api/move', {
+      const response = await fetch('http://192.168.192.25:5000/api/move', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
