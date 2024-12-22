@@ -15,7 +15,6 @@ const Play = () => {
   const handleKeyPress = async (event) => {
     if (event.key === 'Enter' && textInput.trim()) {
       const userId = cookies.accountDetails.accountid;
-      console.log(userId);
       const data = { userId, textInput };
 
       try {
@@ -39,7 +38,7 @@ const Play = () => {
         {/* Room Image Display */}
         <div className="image-display">
           <img 
-            src={response?.mapBase64 ? `${response.mapBase64}` : 'placeholder-image.png'} 
+            src={response?.roomImageBase64 ? `${response.roomImageBase64}` : 'placeholder-image.png'} 
             alt="Room" 
             className="play-image"
           />
