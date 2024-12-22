@@ -42,9 +42,11 @@ const Play = () => {
           />
         </div>
 
-        {/* Text Display */}
-        <div className="text-display">
-          <p className="play-text">{response?.replyText || 'This is a text display section. Add your text here.'}</p>
+        {/* Display Text Section */}
+        <div className="display-text-container">
+          <div className="text-display">
+            <p className="play-text">{response?.replyText || 'This is a text display section. Add your text here.'}</p>
+          </div>
         </div>
 
         {/* Map Image Display */}
@@ -56,8 +58,8 @@ const Play = () => {
           />
         </div>
 
-        {/* Text Input Section */}
-        <div className="input-container">
+        {/* Input Text Section */}
+        <div className="input-text-container">
           <input
             type="text"
             value={textInput}

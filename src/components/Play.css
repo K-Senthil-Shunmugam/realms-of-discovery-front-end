@@ -83,6 +83,11 @@ html, body {
   font-size: 1.2rem;
 }
 
+.display-text-container {
+  width: 100%;
+  margin-top: 20px;
+}
+
 .map-display {
   position: absolute;
   top: 20px;
@@ -100,7 +105,7 @@ html, body {
   border: 3px solid #ffcc00;
 }
 
-.input-container {
+.input-text-container {
   position: absolute;
   bottom: 20px;
   left: 50%;
@@ -166,7 +171,7 @@ html, body {
     text-align: center;
   }
 
-  .text-input {
+  .input-text-container {
     width: 90%;
     margin: 10px 0;
   }
