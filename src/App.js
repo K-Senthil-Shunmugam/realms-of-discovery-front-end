@@ -6,7 +6,7 @@ import Signup from './components/Signup';
 import { useCookies } from 'react-cookie';
 
 function App() {
-  const [cookies] = useCookies(['accountID']); // Check if user is logged in
+  const [cookies] = useCookies(['accountDetails']); // Check if user is logged in
 
   return (
     <Router>

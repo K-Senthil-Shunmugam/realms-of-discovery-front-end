@@ -11,7 +11,7 @@ const Login = () => {
   const [usernameError, setUsernameError] = useState('');
   const [passwordError, setPasswordError] = useState('');
   const navigate = useNavigate();
-  const [, setCookie] = useCookies(['accountID']);
+  const [, setCookie] = useCookies(['accountDetails']);
 
   // Validate inputs
   const validateInputs = () => {
