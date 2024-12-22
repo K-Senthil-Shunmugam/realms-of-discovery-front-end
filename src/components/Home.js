@@ -11,15 +11,10 @@ const Home = () => {
 
   const handleLogout = async () => {
     try {
-      // Send the accountID to the backend in the body of the POST request
       await axios.post('http://192.168.192.25:5000/auth/logout', {
-        accountID: cookies.accountDetails.accountid, // Include the accountID in the request body
+        accountID: cookies.accountDetails.accountid, 
       });
-
-      // Remove the accountID cookie on the client-side
       remove('accountDetails'); 
-
-      // Redirect to the login page
       navigate('/login');
     } catch (err) {
       console.error('Logout failed', err);
@@ -29,7 +24,7 @@ const Home = () => {
   return (
     <div className="home-page-body">
       <div className="navbar">
-      <h1 className="home-h1-welcome-text">Welcome back {username}!</h1>
+        <h1 className="home-h1-welcome-text">Welcome back, {username}!</h1>
         <button onClick={() => navigate("#section1")} className="navbar-btn">Home</button>
         <button onClick={() => navigate("#section2")} className="navbar-btn">About</button>
         <button onClick={() => navigate("/play")} className="navbar-btn">Play</button>
@@ -38,19 +33,20 @@ const Home = () => {
       </div>
 
       <div className="home-container">
-        {/* Section 1 */}
+        {/* Section 1 - Welcome Section */}
         <section id="section1" className="welcome-section">
-          <h2>Hello World!</h2>
+          <h2 className="home-h2-section-title">Welcome to Realms of Discovery!</h2>
+          <p className="home-paragraph">Embark on a thrilling adventure where the realms of fantasy await. Prepare yourself for a journey of discovery, danger, and excitement.</p>
         </section>
 
-        {/* Section 2 */}
+        {/* Section 2 - Features */}
         <section id="section2" className="features-section">
-          <h2 className="home-h2-section-title">Our Features</h2>
-          <p className="home-paragraph">Discover the great features we offer to make your experience better.</p>
+          <h2 className="home-h2-section-title">Explore Our Features</h2>
+          <p className="home-paragraph">From hidden treasures to epic quests, discover a world of possibilities. Immerse yourself in a world full of surprises and challenges!</p>
         </section>
 
         {/* Section 3 - Meet the Team */}
-        <section id = "section3" className="team-section">
+        <section id="section3" className="team-section">
           <h2 className="home-h2-section-title">Meet the Team</h2>
           <div className="team-members">
             <div className="team-member-card">
