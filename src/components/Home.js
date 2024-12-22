@@ -17,8 +17,8 @@ const Home = () => {
       });
 
       // Set the cookies to undefined and set their expiration to the past
-      //setCookie('accountID', "log", { path: '/'});
-      //setCookie('username', "log", { path: '/'});
+      setCookie('accountID', "log", { path: '/'});
+      setCookie('username', "log", { path: '/'});
 
       // Redirect to the login page
       navigate('/login');
@@ -31,14 +31,13 @@ const Home = () => {
     <div className="home-page-body">
       <div className="home-container">
         <div className="home-box">
-          <h1 className="home-h1-welcome-text">
-            Welcome back {username ? username : 'Guest'}!
-          </h1>
+          <h1 className="home-h1-welcome-text">Welcome back {username}!</h1>
           <p className="home-paragraph">You are logged in!</p>
           <button onClick={handleLogout} className="home-logout-btn">Logout</button>
         </div>
       </div>
     </div>
+
   );
 };
 
