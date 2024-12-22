@@ -46,8 +46,8 @@ const Login = () => {
         password,
       });
       // Set the accountID cookie upon successful login
-      setCookie('accountID', response.data.accountID, { path: '/' });
-      setCookie('username', username, { path: '/' });
+      setCookie('accountID', response.data.accountID);
+      setCookie('username', username);
       
       navigate('/'); // Redirect to home page
     } catch (err) {
