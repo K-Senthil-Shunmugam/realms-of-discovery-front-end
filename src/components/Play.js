@@ -38,7 +38,7 @@ const Play = () => {
         {/* Room Image Display */}
         <div className="image-display">
           <img 
-            src={response?.roomImageBase64 ? `${response.roomImageBase64}` : 'placeholder-image.png'} 
+            src={response?.roomImageBase64 ? `${response.roomImageBase64}` : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/9TgZmkAAAAASUVORK5CYII='} 
             alt="Room" 
             className="play-image"
           />
@@ -46,14 +46,14 @@ const Play = () => {
         {/* Display Text Section */}
         <div className="display-text-container">
           <div className="text-display">
-            <p className="play-text">{response?.replyText || 'This is a text display section. Add your text here.'}</p>
+            <p className="play-text">{response?.replyText || ''}</p>
           </div>
         </div>
 
         {/* Map Image Display */}
         <div className="map-display">
           <img 
-            src={response?.mapBase64 ? `${response.mapBase64}` : 'placeholder-image.png'} 
+            src={response?.mapBase64 ? `${response.mapBase64}` : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/9TgZmkAAAAASUVORK5CYII='} 
             alt="Map" 
             className="map-image"
           />

@@ -133,7 +133,7 @@ html, body {
 }
 
 .text-input::placeholder {
-  color: #ffcc00; /* Placeholder text color */
+  color: #000000; /* Placeholder text color */
 }
 
 .text-input:focus {
