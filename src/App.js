@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import Home from './components/Home';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Play from './Play'; // import the Play component
 import { useCookies } from 'react-cookie';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/play" element={<Play />} />
       </Routes>
     </Router>
   );
