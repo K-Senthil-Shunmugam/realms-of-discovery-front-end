@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={cookies.accountDetails.accountid === undefined ? <Navigate to="/login" /> : <Home />}
+          element={cookies.accountDetails=== undefined || cookies.accountDetails === 'undefined' ? <Navigate to="/login" /> : <Home />}
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
