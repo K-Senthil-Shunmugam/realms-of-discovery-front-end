@@ -7,6 +7,7 @@ import { useCookies } from 'react-cookie';
 
 function App() {
   const [cookies] = useCookies(['accountID']); // Check if user is logged in
+  console.log(cookies.accountID);
   return (
     <Router>
       <Routes>
