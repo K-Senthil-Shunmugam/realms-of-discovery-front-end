@@ -7,13 +7,12 @@ import { useCookies } from 'react-cookie';
 
 function App() {
   const [cookies] = useCookies(['accountID']); // Check if user is logged in
-  console.log(cookies.accountID);
   return (
     <Router>
       <Routes>
         <Route
           path="/"
-          element={cookies.accountID === 'undefined' ? <Navigate to="/login" /> : <Home />}
+          element={cookies.accountID === undefined ? <Navigate to="/login" /> : <Home />}
         />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
