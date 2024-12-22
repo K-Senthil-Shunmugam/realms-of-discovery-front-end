@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';  // Import axios
 import './Play.css';
 
 const Play = () => {
@@ -17,16 +18,19 @@ const Play = () => {
       );
 
       const data = { userId, textInput };
-      const response = await fetch('http://192.168.192.25:5000/api/move', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
 
-      const result = await response.json();
-      setResponse(result); // Assuming the response contains roomimage-base64, map-base64, replytext
+      try {
+        // Use axios to send a POST request
+        const result = await axios.post('http://192.168.192.25:5000/api/move', data, {
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+
+        setResponse(result.data); // Assuming the response contains roomimageBase64, mapBase64, replyText
+      } catch (error) {
+        console.error('Error during API request:', error);
+      }
     }
   };
 
