@@ -6,7 +6,7 @@ import './Home.css';
 
 const Home = () => {
   const navigate = useNavigate();
-  const [cookies, removeCookie] = useCookies(['accountID']);
+  const [cookies, setCookie] = useCookies(['accountID']);
   const username = cookies.username;
 
   const handleLogout = async () => {
@@ -17,8 +17,8 @@ const Home = () => {
       });
 
       // Remove the accountID cookie on the client-side
-      removeCookie('accountID');
-      removeCookie('username');
+      setCookie('accountID', undefined, { path: '/' });
+      setCookie('username', undefined, { path: '/' });
 
       // Redirect to the login page
       navigate('/login');
