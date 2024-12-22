@@ -7,7 +7,7 @@ import './Home.css';
 const Home = () => {
   const navigate = useNavigate();
   const [cookies, remove] = useCookies(['accountDetails']);
-  const username = cookies.username;
+  const username = cookies.accountDetails.username;
 
   const handleLogout = async () => {
     try {
