@@ -28,7 +28,7 @@ html, body {
 .play-page {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
+  align-items: center;
   width: 100%;
   height: 100%;
   padding: 20px;
@@ -37,14 +37,17 @@ html, body {
 
 .crt-container {
   background-color: #1b1b1b;
-  width: 100%;
-  max-width: 1200px;
+  width: 90vw; /* Scale to 90% of the viewport width */
+  height: 90vh; /* Scale to 90% of the viewport height */
   border: 3px solid #ffcc00;
   border-radius: 10px;
   padding: 20px;
   position: relative;
   box-shadow: 0 0 30px #ffcc00, inset 0 0 10px #ffcc00;
   animation: crt-glow 0.2s infinite alternate;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 @keyframes crt-glow {
@@ -76,6 +79,8 @@ html, body {
   font-size: 1.5rem;
   margin: 20px 0;
   text-align: center;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .play-text {
@@ -84,8 +89,8 @@ html, body {
 }
 
 .display-text-container {
-  width: 100%;
-  margin-top: 20px;
+  flex: 1;
+  margin-bottom: 20px; /* Ensure there's space between the text and input box */
 }
 
 .map-display {
@@ -156,6 +161,7 @@ html, body {
 
   .crt-container {
     width: 100%;
+    height: auto;
     padding: 15px;
   }
 
