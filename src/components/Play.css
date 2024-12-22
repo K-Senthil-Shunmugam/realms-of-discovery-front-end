@@ -1,146 +1,170 @@
 /* Play Page Styling */
 html, body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #000; /* Blank background color on load */
+  margin: 0;
+  padding: 0;
+  font-family: 'Press Start 2P', cursive; /* Retro 8-bit font */
+  background-color: #590d22;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: linear-gradient(45deg, #590d22, #800f2f); /* Gradient for background */
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite; /* Animated gradient */
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
   }
-  
-  .play-page {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: #000; /* Black background */
-    overflow: hidden;
+  50% {
+    background-position: 100% 50%;
   }
-  
-  .crt-container {
-    background-color: #1b1b1b;
-    width: 90%;
-    max-width: 1200px;
-    border: 3px solid #ffcc00;
-    border-radius: 10px;
-    padding: 20px;
-    position: relative;
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.play-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.crt-container {
+  background-color: #1b1b1b;
+  width: 100%;
+  max-width: 1200px;
+  border: 3px solid #ffcc00;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  box-shadow: 0 0 30px #ffcc00, inset 0 0 10px #ffcc00;
+  animation: crt-glow 0.2s infinite alternate;
+}
+
+@keyframes crt-glow {
+  0% {
     box-shadow: 0 0 30px #ffcc00, inset 0 0 10px #ffcc00;
-    animation: crt-glow 0.2s infinite alternate;
   }
-  
-  @keyframes crt-glow {
-    0% {
-      box-shadow: 0 0 30px #ffcc00, inset 0 0 10px #ffcc00;
-    }
-    100% {
-      box-shadow: 0 0 40px #ffcc00, inset 0 0 20px #ffcc00;
-    }
+  100% {
+    box-shadow: 0 0 40px #ffcc00, inset 0 0 20px #ffcc00;
   }
-  
-  .play-title {
-    color: #ffcc00;
-    font-size: 2rem;
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin-bottom: 20px;
+}
+
+.play-title {
+  color: #ffcc00;
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.image-display {
+  text-align: left;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.play-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border: 5px solid #ffcc00;
+  box-shadow: 0 0 10px #ffcc00;
+}
+
+.text-display {
+  color: #ffffff;
+  font-size: 1.5rem;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.play-text {
+  color: #ffcc00;
+  font-size: 1.2rem;
+}
+
+.map-display {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: 3px solid #ffcc00;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.map-image {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 5px;
+  border: 3px solid #ffcc00;
+}
+
+.input-container {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.text-input {
+  width: 100%;
+  padding: 12px;
+  background-color: #333;
+  border: 2px solid #ffcc00;
+  color: #ffcc00;
+  font-size: 1rem;
+  font-family: 'Press Start 2P', cursive;
+  letter-spacing: 1px;
+  outline: none;
+}
+
+.text-input::placeholder {
+  color: #ffcc00;
+}
+
+.text-input:focus {
+  background-color: #444;
+  border-color: #ff6600;
+}
+
+/* Responsive design for small screens */
+@media (max-width: 768px) {
+  .play-page {
+    flex-direction: column;
+    align-items: center;
   }
-  
+
+  .crt-container {
+    width: 100%;
+    padding: 15px;
+  }
+
   .image-display {
     text-align: center;
     margin-bottom: 20px;
   }
-  
-  .play-image {
-    width: 100%;
-    max-width: 600px;
-    height: auto;
-    border: 5px solid #ffcc00;
-    box-shadow: 0 0 10px #ffcc00;
-  }
-  
-  .text-display {
-    color: #ffffff;
-    font-size: 1.5rem;
-    margin: 20px 0;
-    text-align: center;
-  }
-  
-  .play-text {
-    color: #ffcc00;
-    font-size: 1.2rem;
-  }
-  
+
   .map-display {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    border: 3px solid #ffcc00;
-    padding: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-  }
-  
-  .map-image {
-    width: 200px;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 5px;
-    border: 3px solid #ffcc00;
-  }
-  
-  .input-container {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 600px;
+    position: static;
+    margin-top: 20px;
+    width: 100%;
     text-align: center;
   }
-  
+
   .text-input {
-    width: 100%;
-    padding: 12px;
-    background-color: #333;
-    border: 2px solid #ffcc00;
-    color: #ffcc00;
-    font-size: 1rem;
-    font-family: 'Courier New', Courier, monospace;
-    letter-spacing: 1px;
-    outline: none;
+    width: 90%;
+    margin: 10px 0;
   }
-  
-  .text-input::placeholder {
-    color: #ffcc00;
-  }
-  
-  .text-input:focus {
-    background-color: #444;
-    border-color: #ff6600;
-  }
-  
-  /* Animation for CRT flicker effect */
-  @keyframes flicker {
-    0% {
-      opacity: 1;
-    }
-    5% {
-      opacity: 0.5;
-    }
-    10% {
-      opacity: 1;
-    }
-    15% {
-      opacity: 0.7;
-    }
-    20% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  .crt-container {
-    animation: flicker 0.1s infinite;
-  }
-  
+}
