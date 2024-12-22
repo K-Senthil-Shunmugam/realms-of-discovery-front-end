@@ -29,6 +29,8 @@ const Home = () => {
   return (
     <div className="home-page-body">
       <div className="navbar">
+      <h1 className="home-h1-welcome-text">Welcome back {username}!</h1>
+          <p className="home-paragraph">You are logged in!</p>
         <button onClick={() => navigate('/home')} className="navbar-btn">Home</button>
         <button onClick={() => navigate('/about')} className="navbar-btn">About</button>
         <button onClick={handleLogout} className="navbar-btn">Logout</button>
@@ -37,8 +39,7 @@ const Home = () => {
       <div className="home-container">
         {/* Section 1 */}
         <section className="welcome-section">
-          <h1 className="home-h1-welcome-text">Welcome back {username}!</h1>
-          <p className="home-paragraph">You are logged in!</p>
+          <h2>Hello World!</h2>
         </section>
 
         {/* Section 2 */}
