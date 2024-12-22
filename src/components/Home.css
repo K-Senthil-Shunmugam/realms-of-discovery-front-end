@@ -1,5 +1,7 @@
 /* Home Page Specific Styles */
-
+html {
+  scroll-behavior: smooth;
+}
 .home-page-body {
   font-family: 'Press Start 2P', cursive;
   background-color: #590d22;
@@ -67,7 +69,7 @@
 
 .home-h1-welcome-text {
   color: #ff4d6d;
-  font-size: 24px;
+  font-size: 14px;
   margin-bottom: 20px;
   font-family: 'Press Start 2P', cursive;
 }

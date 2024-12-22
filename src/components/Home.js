@@ -30,26 +30,25 @@ const Home = () => {
     <div className="home-page-body">
       <div className="navbar">
       <h1 className="home-h1-welcome-text">Welcome back {username}!</h1>
-          <p className="home-paragraph">You are logged in!</p>
-        <button onClick={() => navigate('/home')} className="navbar-btn">Home</button>
-        <button onClick={() => navigate('/about')} className="navbar-btn">About</button>
+        <button onClick={() => navigate("#section1")} className="navbar-btn">Home</button>
+        <button onClick={() => navigate("#section2")} className="navbar-btn">About</button>
         <button onClick={handleLogout} className="navbar-btn">Logout</button>
       </div>
 
       <div className="home-container">
         {/* Section 1 */}
-        <section className="welcome-section">
+        <section id="section1" className="welcome-section">
           <h2>Hello World!</h2>
         </section>
 
         {/* Section 2 */}
-        <section className="features-section">
+        <section id="section2" className="features-section">
           <h2 className="home-h2-section-title">Our Features</h2>
           <p className="home-paragraph">Discover the great features we offer to make your experience better.</p>
         </section>
 
         {/* Section 3 - Meet the Team */}
-        <section className="team-section">
+        <section id = "section3" className="team-section">
           <h2 className="home-h2-section-title">Meet the Team</h2>
           <div className="team-members">
             <div className="team-member-card">
