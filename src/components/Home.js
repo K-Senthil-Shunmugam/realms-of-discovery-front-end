@@ -6,7 +6,7 @@ import './Home.css';
 
 const Home = () => {
   const navigate = useNavigate();
-  const [cookies, setCookie] = useCookies(['accountID']);
+  const [cookies, removeCookie] = useCookies(['accountID']);
   const username = cookies.username;
 
   const handleLogout = async () => {
@@ -16,9 +16,9 @@ const Home = () => {
         accountID: cookies.accountID, // Include the accountID in the request body
       });
 
-      // Set the cookies to undefined and set their expiration to the past
-      setCookie('accountID', "log", { path: '/'});
-      setCookie('username', "log", { path: '/'});
+      // Remove the accountID cookie on the client-side
+      removeCookie('accountID');
+      removeCookie('username');
 
       // Redirect to the login page
       navigate('/login');
@@ -37,7 +37,6 @@ const Home = () => {
         </div>
       </div>
     </div>
-
   );
 };
 
