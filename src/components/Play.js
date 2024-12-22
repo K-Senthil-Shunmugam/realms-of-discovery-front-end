@@ -40,7 +40,7 @@ const Play = () => {
         {/* Room Image Display */}
         <div className="image-display">
           <img 
-            src={response?.roomimageBase64 ? `data:image/png;base64,${response.roomimageBase64}` : 'placeholder-image.png'} 
+            src={response?.roomimageBase64 ? `${response.roomimageBase64}` : 'placeholder-image.png'} 
             alt="Room" 
             className="play-image"
           />
@@ -56,7 +56,7 @@ const Play = () => {
         {/* Map Image Display */}
         <div className="map-display">
           <img 
-            src={response?.mapBase64 ? `data:image/png;base64,${response.mapBase64}` : 'placeholder-image.png'} 
+            src={response?.mapBase64 ? `${response.mapBase64}` : 'placeholder-image.png'} 
             alt="Map" 
             className="map-image"
           />
