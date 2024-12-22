@@ -36,14 +36,14 @@ html, body {
 }
 
 .crt-container {
-  background-color: #1b1b1b;
+  background-color: rgba(128, 15, 47, 0.9); /* Semi-transparent background with your color */
   width: 90vw; /* Scale to 90% of the viewport width */
   height: 90vh; /* Scale to 90% of the viewport height */
-  border: 3px solid #ffcc00;
+  border: 4px solid #ff4d6d; /* Matching border color */
   border-radius: 10px;
   padding: 20px;
   position: relative;
-  box-shadow: 0 0 30px #ffcc00, inset 0 0 10px #ffcc00;
+  box-shadow: 0 0 30px #ff4d6d, inset 0 0 10px #ff4d6d;
   animation: crt-glow 0.2s infinite alternate;
   display: flex;
   flex-direction: column;
@@ -52,10 +52,10 @@ html, body {
 
 @keyframes crt-glow {
   0% {
-    box-shadow: 0 0 30px #ffcc00, inset 0 0 10px #ffcc00;
+    box-shadow: 0 0 30px #ff4d6d, inset 0 0 10px #ff4d6d;
   }
   100% {
-    box-shadow: 0 0 40px #ffcc00, inset 0 0 20px #ffcc00;
+    box-shadow: 0 0 40px #ff4d6d, inset 0 0 20px #ff4d6d;
   }
 }
 
@@ -70,8 +70,8 @@ html, body {
   max-width: 600px;
   height: 300px;
   object-fit: cover;
-  border: 5px solid #ffcc00;
-  box-shadow: 0 0 10px #ffcc00;
+  border: 5px solid #ff4d6d; /* Border color matches */
+  box-shadow: 0 0 10px #ff4d6d;
 }
 
 .text-display {
@@ -84,20 +84,20 @@ html, body {
 }
 
 .play-text {
-  color: #ffcc00;
+  color: #ff4d6d;
   font-size: 1.2rem;
 }
 
 .display-text-container {
   flex: 1;
-  margin-bottom: 20px; /* Ensure there's space between the text and input box */
+  margin-bottom: 20px;
 }
 
 .map-display {
   position: absolute;
   top: 20px;
   right: 20px;
-  border: 3px solid #ffcc00;
+  border: 3px solid #ff4d6d;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.7);
 }
@@ -107,7 +107,7 @@ html, body {
   height: 200px;
   object-fit: cover;
   border-radius: 5px;
-  border: 3px solid #ffcc00;
+  border: 3px solid #ff4d6d;
 }
 
 .input-text-container {
@@ -123,9 +123,9 @@ html, body {
 .text-input {
   width: 100%;
   padding: 12px;
-  background-color: #333;
-  border: 2px solid #ffcc00;
-  color: #ffcc00;
+  background-color: #c9184a; /* Background color matches */
+  border: 2px solid #a4133c;
+  color: #ff4d6d;
   font-size: 1rem;
   font-family: 'Press Start 2P', cursive;
   letter-spacing: 1px;
@@ -133,12 +133,13 @@ html, body {
 }
 
 .text-input::placeholder {
-  color: #ffcc00;
+  color: #ff4d6d;
 }
 
 .text-input:focus {
-  background-color: #444;
-  border-color: #ff6600;
+  background-color: #ff758f;
+  border-color: #ff4d6d;
+  box-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff4d6d; /* Glowing effect */
 }
 
 /* Placeholder for missing images */
@@ -147,7 +148,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #ffcc00;
+  color: #ff4d6d;
   font-size: 1.2rem;
   text-align: center;
 }
