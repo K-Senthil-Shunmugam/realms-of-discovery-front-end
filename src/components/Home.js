@@ -13,7 +13,7 @@ const Home = () => {
     try {
       // Send the accountID to the backend in the body of the POST request
       await axios.post('http://192.168.192.25:5000/auth/logout', {
-        accountID: cookies.accountDetails.accountID, // Include the accountID in the request body
+        accountID: cookies.accountDetails('accountid'), // Include the accountID in the request body
       });
 
       // Remove the accountID cookie on the client-side
