@@ -141,6 +141,6 @@ html, body {
   }
   
   .crt-container {
-    animation: flicker 0.5s infinite;
+    animation: flicker 0.1s infinite;
   }
   
