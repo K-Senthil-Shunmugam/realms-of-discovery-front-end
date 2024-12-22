@@ -56,15 +56,6 @@ html, body {
   }
 }
 
-.play-title {
-  color: #ffcc00;
-  font-size: 2rem;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 20px;
-}
-
 .image-display {
   text-align: left;
   flex: 1;
@@ -74,7 +65,8 @@ html, body {
 .play-image {
   width: 100%;
   max-width: 600px;
-  height: auto;
+  height: 300px;
+  object-fit: cover;
   border: 5px solid #ffcc00;
   box-shadow: 0 0 10px #ffcc00;
 }
@@ -137,6 +129,17 @@ html, body {
 .text-input:focus {
   background-color: #444;
   border-color: #ff6600;
+}
+
+/* Placeholder for missing images */
+.play-image, .map-image {
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffcc00;
+  font-size: 1.2rem;
+  text-align: center;
 }
 
 /* Responsive design for small screens */

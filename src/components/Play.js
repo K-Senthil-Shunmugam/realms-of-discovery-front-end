@@ -33,12 +33,10 @@ const Play = () => {
   return (
     <div className="play-page">
       <div className="crt-container">
-        <h1 className="play-title">Play Page</h1>
-        
         {/* Room Image Display */}
         <div className="image-display">
           <img 
-            src={`data:image/png;base64,${response?.roomimageBase64 || 'placeholder'}`} 
+            src={response?.roomimageBase64 ? `data:image/png;base64,${response.roomimageBase64}` : 'placeholder-image.png'} 
             alt="Room" 
             className="play-image"
           />
@@ -52,7 +50,7 @@ const Play = () => {
         {/* Map Image Display */}
         <div className="map-display">
           <img 
-            src={`data:image/png;base64,${response?.mapBase64 || 'placeholder'}`} 
+            src={response?.mapBase64 ? `data:image/png;base64,${response.mapBase64}` : 'placeholder-image.png'} 
             alt="Map" 
             className="map-image"
           />
@@ -66,7 +64,7 @@ const Play = () => {
             onChange={handleInputChange}
             onKeyDown={handleKeyPress}
             className="text-input"
-            placeholder="Enter something..."
+            placeholder="Enter your next move..."
           />
         </div>
       </div>
