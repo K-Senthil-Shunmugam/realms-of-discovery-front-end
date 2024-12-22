@@ -43,7 +43,6 @@ const Play = () => {
             className="play-image"
           />
         </div>
-
         {/* Display Text Section */}
         <div className="display-text-container">
           <div className="text-display">
