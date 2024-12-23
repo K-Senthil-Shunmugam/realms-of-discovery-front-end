@@ -31,30 +31,72 @@ const Home = () => {
 
       <div className="home-container">
         {/* Section 1 - Welcome Section */}
-        <section id="section1" className="welcome-section">
-          <h2 className="home-h2-section-title">Welcome to Realms of Discovery!</h2>
-          <p className="home-paragraph">
           
-        Embark on a thrilling journey across six mystical realms, each filled with unique challenges, hidden secrets, and ancient powers. As a daring adventurer, 
+          <section id="section1" className="welcome-section">
+      <h2 className="home-h2-section-title">Welcome to Realms of Discovery!</h2>
+      <p className="home-paragraph">
+        Embark on a thrilling journey across six mystical realms, each filled with unique challenges, hidden secrets, and ancient powers. As a daring adventurer,
         your quest is to uncover the lost essences of the cosmos and restore balance to the universe. <br />
         Prepare to test your wits, face formidable foes, and solve complex puzzles as you explore diverse environments, from fiery mountains to ocean depths.
-        </p>
+      </p>
 
-        <h2>What Awaits You:</h2>
-        <ul>
-          <li><strong>🌍 Earth Realm:</strong> Venture into the heart of nature, where you'll battle cunning enemies, traverse rugged landscapes, and discover the Earth Core—a powerful artifact that will help you unlock new realms.</li>
-          <br />
-          <li><strong>🌕 Moon Realm:</strong> Enter a world where darkness meets light, and illusion hides the truth. Solve riddles, face spectral beings, and uncover the mysteries hidden beneath the Moon's surface.</li>
-          <br />
-          <li><strong>☀ Sun Realm:</strong> Brave the harsh desert landscapes, solve ancient puzzles, and collect the Solar Essence to harness the might of the Sun and gain access to even more powerful secrets.</li>
-          <br />
-          <li><strong>⭐ Star Realm:</strong> Journey beyond the stars and into the celestial unknown. Confront astral guardians, unlock cosmic secrets, and unravel the mysteries of the cosmos itself.</li>
-          <br />
-          <li><strong>🌊 Sea Realm:</strong> Dive deep into the abyss of the ocean, where treasure and danger await beneath the waves. Conquer the Abyssal King and claim the Ocean Heart to navigate even further into the unknown.</li>
-          <br />
-          <li><strong>🔥 Inferno Realm:</strong> Enter the fiery heart of the world. With molten rivers, fiery beasts, and intense trials, you'll need to conquer the Infernal Overlord and collect the Flame Core to complete your journey and restore the balance of the realms.</li>
-        </ul>    
-        </section>
+      <h2>What Awaits You:</h2>
+      <div className="realms-container">
+        {/* Earth Realm */}
+        <div className="realm-card">
+          <img src="/images/earth-realm.jpg" alt="Earth Realm" className="realm-img" />
+          <h3 className="realm-title">🌍 Earth Realm</h3>
+          <p className="realm-description">
+            Venture into the heart of nature, where you'll battle cunning enemies, traverse rugged landscapes, and discover the Earth Core—a powerful artifact that will help you unlock new realms.
+          </p>
+        </div>
+
+        {/* Moon Realm */}
+        <div className="realm-card">
+          <img src="/images/moon-realm.jpg" alt="Moon Realm" className="realm-img" />
+          <h3 className="realm-title">🌕 Moon Realm</h3>
+          <p className="realm-description">
+            Enter a world where darkness meets light, and illusion hides the truth. Solve riddles, face spectral beings, and uncover the mysteries hidden beneath the Moon's surface.
+          </p>
+        </div>
+
+        {/* Sun Realm */}
+        <div className="realm-card">
+          <img src="/images/sun-realm.jpg" alt="Sun Realm" className="realm-img" />
+          <h3 className="realm-title">☀ Sun Realm</h3>
+          <p className="realm-description">
+            Brave the harsh desert landscapes, solve ancient puzzles, and collect the Solar Essence to harness the might of the Sun and gain access to even more powerful secrets.
+          </p>
+        </div>
+
+        {/* Star Realm */}
+        <div className="realm-card">
+          <img src="/images/star-realm.jpg" alt="Star Realm" className="realm-img" />
+          <h3 className="realm-title">⭐ Star Realm</h3>
+          <p className="realm-description">
+            Journey beyond the stars and into the celestial unknown. Confront astral guardians, unlock cosmic secrets, and unravel the mysteries of the cosmos itself.
+          </p>
+        </div>
+
+        {/* Sea Realm */}
+        <div className="realm-card">
+          <img src="/images/sea-realm.jpg" alt="Sea Realm" className="realm-img" />
+          <h3 className="realm-title">🌊 Sea Realm</h3>
+          <p className="realm-description">
+            Dive deep into the abyss of the ocean, where treasure and danger await beneath the waves. Conquer the Abyssal King and claim the Ocean Heart to navigate even further into the unknown.
+          </p>
+        </div>
+
+        {/* Inferno Realm */}
+        <div className="realm-card">
+          <img src="/images/inferno-realm.jpg" alt="Inferno Realm" className="realm-img" />
+          <h3 className="realm-title">🔥 Inferno Realm</h3>
+          <p className="realm-description">
+            Enter the fiery heart of the world. With molten rivers, fiery beasts, and intense trials, you'll need to conquer the Infernal Overlord and collect the Flame Core to complete your journey and restore the balance of the realms.
+          </p>
+        </div>
+      </div>
+    </section>
 
         {/* Section 2 - Features */}
         <section id="section2" className="features-section">
