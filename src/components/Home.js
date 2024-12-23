@@ -40,7 +40,7 @@ const Home = () => {
         Prepare to test your wits, face formidable foes, and solve complex puzzles as you explore diverse environments, from fiery mountains to ocean depths.
       </p>
 
-      <h2>What Awaits You:</h2>
+      <h2 className="home-h2-section-title">What Awaits You:</h2>
       <div className="realms-container">
         {/* Earth Realm */}
         <div className="realm-card">
