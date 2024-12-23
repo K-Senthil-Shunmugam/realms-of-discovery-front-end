@@ -1,6 +1,16 @@
 /* Signup.css */
+
+/* Import Ghosthey Font */
+@font-face {
+  font-family: 'Ghosthey';
+  src: url('Ghosthey.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 body {
-  font-family: 'Press Start 2P', cursive; /* 8-bit font for all text */
+  font-family: 'Ghosthey', cursive; /* 8-bit font for all text */
   background: linear-gradient(90deg, #002f6c, #004aad, #0073e6, #00aaff, #66d3ff, #99e6ff, #ccefff, #e6f7ff); /* Gradient from image */
   margin: 0;
   padding: 0;
