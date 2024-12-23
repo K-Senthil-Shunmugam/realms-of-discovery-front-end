@@ -53,7 +53,7 @@ const Home = () => {
 
         {/* Moon Realm */}
         <div className="realm-card">
-          <img src="/images/moon-realm.jpg" alt="Moon Realm" className="realm-img" />
+          <img src="/Realms Image/moon.jpg" alt="Moon Realm" className="realm-img" />
           <h3 className="realm-title">🌕 Moon Realm</h3>
           <p className="realm-description">
             Enter a world where darkness meets light, and illusion hides the truth. Solve riddles, face spectral beings, and uncover the mysteries hidden beneath the Moon's surface.
@@ -62,7 +62,7 @@ const Home = () => {
 
         {/* Sun Realm */}
         <div className="realm-card">
-          <img src="/images/sun-realm.jpg" alt="Sun Realm" className="realm-img" />
+          <img src="/Realms Image/sun.jpg" alt="Sun Realm" className="realm-img" />
           <h3 className="realm-title">☀ Sun Realm</h3>
           <p className="realm-description">
             Brave the harsh desert landscapes, solve ancient puzzles, and collect the Solar Essence to harness the might of the Sun and gain access to even more powerful secrets.
@@ -80,7 +80,7 @@ const Home = () => {
 
         {/* Sea Realm */}
         <div className="realm-card">
-          <img src="/images/sea-realm.jpg" alt="Sea Realm" className="realm-img" />
+          <img src="/Realms Image/sea.jpg" alt="Sea Realm" className="realm-img" />
           <h3 className="realm-title">🌊 Sea Realm</h3>
           <p className="realm-description">
             Dive deep into the abyss of the ocean, where treasure and danger await beneath the waves. Conquer the Abyssal King and claim the Ocean Heart to navigate even further into the unknown.
@@ -89,7 +89,7 @@ const Home = () => {
 
         {/* Inferno Realm */}
         <div className="realm-card">
-          <img src="/images/inferno-realm.jpg" alt="Inferno Realm" className="realm-img" />
+          <img src="/Realms Image/inferno.jpg" alt="Inferno Realm" className="realm-img" />
           <h3 className="realm-title">🔥 Inferno Realm</h3>
           <p className="realm-description">
             Enter the fiery heart of the world. With molten rivers, fiery beasts, and intense trials, you'll need to conquer the Infernal Overlord and collect the Flame Core to complete your journey and restore the balance of the realms.
