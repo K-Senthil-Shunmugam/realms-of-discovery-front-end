@@ -45,7 +45,7 @@ const Home = () => {
         {/* Earth Realm */}
         <div className="realm-card">
           <img src="/Realms Image/earth.jpg" alt="Earth Realm" className="realm-img" />
-          <h3 className="realm-title">🌍 Earth Realm</h3>
+          <h3 className="realm-title">Earth Realm</h3>
           <p className="realm-description">
             Venture into the heart of nature, where you'll battle cunning enemies, traverse rugged landscapes, and discover the Earth Core—a powerful artifact that will help you unlock new realms.
           </p>
@@ -54,7 +54,7 @@ const Home = () => {
         {/* Moon Realm */}
         <div className="realm-card">
           <img src="/Realms Image/moon.jpg" alt="Moon Realm" className="realm-img" />
-          <h3 className="realm-title">🌕 Moon Realm</h3>
+          <h3 className="realm-title">Moon Realm</h3>
           <p className="realm-description">
             Enter a world where darkness meets light, and illusion hides the truth. Solve riddles, face spectral beings, and uncover the mysteries hidden beneath the Moon's surface.
           </p>
@@ -63,7 +63,7 @@ const Home = () => {
         {/* Sun Realm */}
         <div className="realm-card">
           <img src="/Realms Image/sun.jpg" alt="Sun Realm" className="realm-img" />
-          <h3 className="realm-title">☀ Sun Realm</h3>
+          <h3 className="realm-title">Sun Realm</h3>
           <p className="realm-description">
             Brave the harsh desert landscapes, solve ancient puzzles, and collect the Solar Essence to harness the might of the Sun and gain access to even more powerful secrets.
           </p>
@@ -72,7 +72,7 @@ const Home = () => {
         {/* Star Realm */}
         <div className="realm-card">
           <img src="/Realms Image/kingdom.jpg" alt="Star Realm" className="realm-img" />
-          <h3 className="realm-title">⭐ Star Realm</h3>
+          <h3 className="realm-title">Star Realm</h3>
           <p className="realm-description">
             Journey beyond the stars and into the celestial unknown. Confront astral guardians, unlock cosmic secrets, and unravel the mysteries of the cosmos itself.
           </p>
@@ -81,7 +81,7 @@ const Home = () => {
         {/* Sea Realm */}
         <div className="realm-card">
           <img src="/Realms Image/sea.jpg" alt="Sea Realm" className="realm-img" />
-          <h3 className="realm-title">🌊 Sea Realm</h3>
+          <h3 className="realm-title">Sea Realm</h3>
           <p className="realm-description">
             Dive deep into the abyss of the ocean, where treasure and danger await beneath the waves. Conquer the Abyssal King and claim the Ocean Heart to navigate even further into the unknown.
           </p>
@@ -90,7 +90,7 @@ const Home = () => {
         {/* Inferno Realm */}
         <div className="realm-card">
           <img src="/Realms Image/inferno.jpg" alt="Inferno Realm" className="realm-img" />
-          <h3 className="realm-title">🔥 Inferno Realm</h3>
+          <h3 className="realm-title">Inferno Realm</h3>
           <p className="realm-description">
             Enter the fiery heart of the world. With molten rivers, fiery beasts, and intense trials, you'll need to conquer the Infernal Overlord and collect the Flame Core to complete your journey and restore the balance of the realms.
           </p>
