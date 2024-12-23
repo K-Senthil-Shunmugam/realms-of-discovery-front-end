@@ -1,4 +1,5 @@
 /* Home Page Specific Styles */
+
 html {
   scroll-behavior: smooth;
 }
@@ -10,12 +11,12 @@ body {
 
 .home-page-body {
   font-family: 'Press Start 2P', cursive;
-  background-color: #1E2A38;
+  background-color: #0A2540; /* Dark Navy Blue */
   display: flex;
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  background-image: linear-gradient(45deg, #1E2A38, #4F6272);
+  background-image: linear-gradient(45deg, #0A2540, #1D4E89, #3A7CA5);
   background-size: 400% 400%;
   animation: gradientAnimation 10s ease infinite;
 }
@@ -37,7 +38,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
-  background-color: #4F6272;
+  background-color: #1D4E89; /* Medium Blue */
   padding: 15px;
   position: fixed;
   top: 0;
@@ -45,21 +46,22 @@ body {
 }
 
 .navbar-btn {
-  background-color: #F0A500;
+  background-color: #3A7CA5; /* Sky Blue */
   border: none;
-  color: #1E2A38;
+  color: #F0F8FF; /* Alice Blue */
   padding: 12px 20px;
   margin: 0 10px;
   cursor: pointer;
   font-family: 'Press Start 2P', cursive;
   text-transform: uppercase;
   letter-spacing: 2px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .navbar-btn:hover {
-  background-color: #FFD369;
+  background-color: #5DADE2; /* Light Blue */
   transform: scale(1.05);
-  box-shadow: 0 0 10px #F0A500, 0 0 20px #F0A500;
+  box-shadow: 0 0 10px #3A7CA5, 0 0 20px #3A7CA5;
 }
 
 /* Main Container */
@@ -80,22 +82,22 @@ body {
 }
 
 .home-h1-welcome-text {
-  color: #F0A500;
+  color: #5DADE2; /* Light Blue */
   font-size: 18px;
   margin-bottom: 20px;
   font-family: 'Press Start 2P', cursive;
 }
 
 .home-h2-section-title {
-  color: #FFD369;
+  color: #3A7CA5; /* Sky Blue */
   font-size: 28px;
   margin-bottom: 15px;
   font-family: 'Press Start 2P', cursive;
-  text-shadow: 2px 2px 10px #4F6272;
+  text-shadow: 2px 2px 10px #1D4E89;
 }
 
 .home-paragraph {
-  color: #F5F5F5;
+  color: #F0F8FF; /* Alice Blue */
   font-size: 18px;
   margin: 0 20px;
   line-height: 1.6;
@@ -110,20 +112,20 @@ body {
 }
 
 .team-member-card {
-  background-color: #4F6272;
+  background-color: #1D4E89; /* Medium Blue */
   padding: 20px;
   border-radius: 8px;
   text-align: center;
   width: 200px;
-  border: 4px solid #F0A500;
-  background: rgba(79, 98, 114, 0.9);
+  border: 4px solid #3A7CA5;
+  background: rgba(29, 78, 137, 0.9);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
 
 .team-member-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 15px rgba(240, 165, 0, 0.4);
+  box-shadow: 0 8px 15px rgba(58, 124, 165, 0.4);
 }
 
 .team-member-img {
@@ -131,18 +133,18 @@ body {
   height: 100px;
   border-radius: 50%;
   margin-bottom: 15px;
-  border: 2px solid #FFD369;
+  border: 2px solid #5DADE2;
   object-fit: cover;
 }
 
 .team-member-name {
-  color: #F0A500;
+  color: #5DADE2; /* Light Blue */
   font-size: 20px;
   font-family: 'Press Start 2P', cursive;
 }
 
 .team-member-links a {
-  color: #F0A500;
+  color: #5DADE2; /* Light Blue */
   text-decoration: none;
   margin: 5px;
   font-size: 14px;
@@ -151,7 +153,7 @@ body {
 
 .team-member-links a:hover {
   text-decoration: underline;
-  color: #FFD369;
+  color: #A9CCE3; /* Pale Blue */
 }
 
 /* Responsive Design */
