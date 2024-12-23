@@ -1,16 +1,14 @@
 /* Login.css */
 body {
   font-family: 'Press Start 2P', cursive; /* 8-bit font for all text */
-  background-color: #590d22;
+  background: linear-gradient(90deg, #002f6c, #004aad, #0073e6, #00aaff, #66d3ff, #99e6ff, #ccefff, #e6f7ff); /* Gradient from Signup */
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: linear-gradient(45deg, #590d22, #800f2f); /* Gradient for background */
-  background-size: 400% 400%;
-  animation: gradientAnimation 10s ease infinite; /* Animated gradient */
+  animation: gradientAnimation 10s ease infinite;
 }
 
 @keyframes gradientAnimation {
@@ -31,133 +29,127 @@ body {
   align-items: center;
   width: 100%;
   height: 100%;
-  padding: 10px; /* Added padding for better centering on smaller screens */
+  padding: 10px;
   box-sizing: border-box;
 }
 
 .login-box {
-  background-color: #800f2f;
+  background: #99e6ff; /* Light blue */
   padding: 40px;
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 400px; /* Set max width to ensure the box doesn't stretch too much */
+  max-width: 400px;
   text-align: center;
-  border: 4px solid #ff4d6d; /* 8-bit solid border */
-  background: rgba(128, 15, 47, 0.9); /* Semi-transparent background */
+  border: 4px solid #0073e6; /* Blue border */
+  background: rgba(153, 230, 255, 0.9); /* Semi-transparent background */
   display: flex;
   flex-direction: column;
-  align-items: center; /* Ensures children are centered */
+  align-items: center;
 }
 
 .h1-login {
-  color: #ff4d6d;
-  font-size: 36px; /* Adjusted size for clarity */
+  color: #004aad; /* Dark Blue */
+  font-size: 36px;
   margin-bottom: 20px;
-  font-family: 'Press Start 2P', cursive; /* 8-bit font for title */
-  letter-spacing: 4px; /* Spaced out letters for retro style */
   text-transform: uppercase;
+  letter-spacing: 4px;
 }
 
 .input-field {
   width: 100%;
   padding: 12px;
   margin: 10px 0;
-  border: 2px solid #a4133c;
+  border: 2px solid #0073e6;
   border-radius: 4px;
   font-size: 18px;
-  background-color: #c9184a;
-  color: white;
+  background-color: #ccefff;
+  color: #002f6c;
   text-align: center;
-  font-family: 'Press Start 2P', cursive; /* 8-bit font for inputs */
   letter-spacing: 1px;
   transition: all 0.3s ease-in-out;
 }
 
 .input-field:focus {
   outline: none;
-  border-color: #ff4d6d;
-  box-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff4d6d; /* Glowing effect */
-  background-color: #ff758f; /* Lighten on focus */
+  border-color: #004aad;
+  box-shadow: 0 0 10px #004aad;
+  background-color: #99e6ff;
 }
 
 .input-error {
-  border: 2px solid #ff758f;
+  border: 2px solid #ff4d4d; /* Error state */
 }
 
 .login-btn {
   width: 100%;
   padding: 14px;
   margin-top: 20px;
-  background-color: #ff4d6d;
+  background-color: #0073e6;
   border: none;
   color: white;
   font-size: 18px;
   border-radius: 6px;
   cursor: pointer;
-  font-family: 'Press Start 2P', cursive;
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .login-btn:disabled {
-  background-color: #c9184a;
+  background-color: #99e6ff;
   cursor: not-allowed;
-  opacity: 0.5; /* Greyed-out effect */
+  opacity: 0.5;
 }
 
 .login-btn:hover {
-  background-color: #ff758f;
-  transform: scale(1.05); /* Slight scaling effect for hover */
-  box-shadow: 0 0 10px #ff4d6d, 0 0 20px #ff4d6d; /* Glowing effect */
+  background-color: #004aad;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #004aad;
 }
 
 .error-msg {
-  color: #ff758f;
+  color: #ff4d4d; /* Error red */
   font-size: 14px;
   margin-top: 10px;
-  font-family: 'Press Start 2P', cursive;
 }
 
 .signup-link {
   margin-top: 20px;
-  color: white;
-  font-size: 10px;
-  font-family: 'Press Start 2P', cursive;
+  color: #004aad;
+  font-size: 12px;
 }
 
 .signup-link a {
-  color: #ff758f;
+  color: #0073e6;
   text-decoration: none;
   font-weight: bold;
-  letter-spacing: 1px;
 }
 
 .signup-link a:hover {
   text-decoration: underline;
-  color: #ff4d6d; /* Highlight color on hover */
+  color: #004aad;
 }
 
 /* Media Queries for responsiveness */
 @media (max-width: 500px) {
   .login-box {
-    padding: 30px; /* Reduce padding for smaller screens */
+    padding: 30px;
   }
 
   .h1-login {
-    font-size: 28px; /* Reduce font size on small screens */
+    font-size: 28px;
   }
 
   .input-field {
-    font-size: 16px; /* Slightly smaller input text */
+    font-size: 16px;
   }
 
   .login-btn {
-    font-size: 16px; /* Smaller button font size */
+    font-size: 16px;
   }
 
   .signup-link {
-    font-size: 12px; /* Smaller text for the signup link */
+    font-size: 10px;
   }
 }
