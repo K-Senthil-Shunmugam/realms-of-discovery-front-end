@@ -182,6 +182,7 @@ body {
   }
 }
 
+/* Main container holding the realm cards */
 .realms-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns for responsiveness */
@@ -189,6 +190,7 @@ body {
   margin-top: 20px;
 }
 
+/* Styling for each individual realm card */
 .realm-card {
   border: 2px solid #ddd;
   border-radius: 10px;
@@ -196,20 +198,29 @@ body {
   background-color: #f4f4f4;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
 }
 
+.realm-card:hover {
+  transform: translateY(-10px); /* Lifts the card up by 10px */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Adds a stronger shadow */
+}
+
+/* Realm image styling */
 .realm-img {
   width: 100%;
   height: auto;
   border-radius: 5px;
 }
 
+/* Realm title */
 .realm-title {
   font-size: 1.5rem;
   margin-top: 10px;
   color: #333;
 }
 
+/* Realm description */
 .realm-description {
   font-size: 1rem;
   margin-top: 10px;
