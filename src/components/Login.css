@@ -97,7 +97,7 @@ body {
 }
 
 .login-btn:disabled {
-  background-color: #99e6ff;
+  background-color: #004aad;
   cursor: not-allowed;
   opacity: 0.5;
 }
