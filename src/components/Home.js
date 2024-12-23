@@ -38,7 +38,7 @@ const Home = () => {
           your quest is to uncover the lost essences of the cosmos and restore balance to the universe. Prepare to test your wits, face formidable foes, and solve complex 
           puzzles as you explore diverse environments, from fiery mountains to ocean depths.  
           
-         What Awaits You:
+          <br>What Awaits You:</br>
           🌍 Earth Realm: Venture into the heart of nature, where you'll battle cunning enemies, traverse rugged landscapes, and discover the Earth Core—a powerful artifact that will help you unlock new realms.
 
           🌕 Moon Realm: Enter a world where darkness meets light, and illusion hides the truth. Solve riddles, face spectral beings, and uncover the mysteries hidden beneath the Moon's surface.
