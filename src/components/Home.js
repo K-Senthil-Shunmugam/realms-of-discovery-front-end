@@ -44,7 +44,7 @@ const Home = () => {
       <div className="realms-container">
         {/* Earth Realm */}
         <div className="realm-card">
-          <img src="/images/earth-realm.jpg" alt="Earth Realm" className="realm-img" />
+          <img src="/Realms Image/earth.jpg" alt="Earth Realm" className="realm-img" />
           <h3 className="realm-title">🌍 Earth Realm</h3>
           <p className="realm-description">
             Venture into the heart of nature, where you'll battle cunning enemies, traverse rugged landscapes, and discover the Earth Core—a powerful artifact that will help you unlock new realms.
