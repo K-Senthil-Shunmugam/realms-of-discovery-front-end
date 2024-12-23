@@ -71,7 +71,7 @@ const Home = () => {
 
         {/* Star Realm */}
         <div className="realm-card">
-          <img src="\realms-of-discovery-front-end\public\Realms Image\kingdom.jpg" alt="Star Realm" className="realm-img" />
+          <img src="/Realms Image/kingdom.jpg" alt="Star Realm" className="realm-img" />
           <h3 className="realm-title">⭐ Star Realm</h3>
           <p className="realm-description">
             Journey beyond the stars and into the celestial unknown. Confront astral guardians, unlock cosmic secrets, and unravel the mysteries of the cosmos itself.
