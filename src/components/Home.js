@@ -43,12 +43,12 @@ const Home = () => {
           
          <h2> What Awaits You:</h2>
           <ul>
-          <li><strong>🌍 Earth Realm:</strong> Venture into the heart of nature, where you'll battle cunning enemies, traverse rugged landscapes, and discover the Earth Core—a powerful artifact that will help you unlock new realms.</li>
-          <li><strong>🌕 Moon Realm:</strong> Enter a world where darkness meets light, and illusion hides the truth. Solve riddles, face spectral beings, and uncover the mysteries hidden beneath the Moon's surface.</li>
-          <li><strong>☀ Sun Realm:</strong> Brave the harsh desert landscapes, solve ancient puzzles, and collect the Solar Essence to harness the might of the Sun and gain access to even more powerful secrets.</li>
-          <li><strong>⭐ Star Realm:</strong> Journey beyond the stars and into the celestial unknown. Confront astral guardians, unlock cosmic secrets, and unravel the mysteries of the cosmos itself.</li>
-          <li><strong>🌊 Sea Realm:</strong> Dive deep into the abyss of the ocean, where treasure and danger await beneath the waves. Conquer the Abyssal King and claim the Ocean Heart to navigate even further into the unknown.</li>
-          <li><strong>🔥 Inferno Realm:</strong> Enter the fiery heart of the world. With molten rivers, fiery beasts, and intense trials, you'll need to conquer the Infernal Overlord and collect the Flame Core to complete your journey and restore the balance of the realms.</li>
+          <strong>🌍 Earth Realm:</strong> Venture into the heart of nature, where you'll battle cunning enemies, traverse rugged landscapes, and discover the Earth Core—a powerful artifact that will help you unlock new realms.</li>
+          <strong>🌕 Moon Realm:</strong> Enter a world where darkness meets light, and illusion hides the truth. Solve riddles, face spectral beings, and uncover the mysteries hidden beneath the Moon's surface.</li>
+          <strong>☀ Sun Realm:</strong> Brave the harsh desert landscapes, solve ancient puzzles, and collect the Solar Essence to harness the might of the Sun and gain access to even more powerful secrets.</li>
+          <strong>⭐ Star Realm:</strong> Journey beyond the stars and into the celestial unknown. Confront astral guardians, unlock cosmic secrets, and unravel the mysteries of the cosmos itself.</li>
+          <strong>🌊 Sea Realm:</strong> Dive deep into the abyss of the ocean, where treasure and danger await beneath the waves. Conquer the Abyssal King and claim the Ocean Heart to navigate even further into the unknown.</li>
+          <strong>🔥 Inferno Realm:</strong> Enter the fiery heart of the world. With molten rivers, fiery beasts, and intense trials, you'll need to conquer the Infernal Overlord and collect the Flame Core to complete your journey and restore the balance of the realms.</li>
          </ul>
         </section>
 
