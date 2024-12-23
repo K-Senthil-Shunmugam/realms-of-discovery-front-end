@@ -24,11 +24,8 @@ const Home = () => {
   return (
     <div className="home-page-body">
       <div className="navbar">
-        <h1 className="home-h1-welcome-text">Welcome back, {username}!</h1>
-        <button onClick={() => navigate("#section1")} className="navbar-btn">Home</button>
-        <button onClick={() => navigate("#section2")} className="navbar-btn">About</button>
         <button onClick={() => navigate("/play")} className="navbar-btn">Play</button>
-        <button onClick={() => navigate("#section3")} className="navbar-btn">Meet the Team</button>
+        <h1 className="home-h1-welcome-text">Welcome back, {username}!</h1>
         <button onClick={handleLogout} className="navbar-btn">Logout</button>
       </div>
 
