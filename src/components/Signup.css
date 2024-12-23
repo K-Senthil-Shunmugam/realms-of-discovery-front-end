@@ -50,7 +50,7 @@ body {
   align-items: center; /* Ensures children are centered */
 }
 
-h1 {
+.h1-signup {
   color: #baefee; /* New title color */
   font-size: 36px; /* Adjusted size for clarity */
   margin-bottom: 20px;
@@ -145,7 +145,7 @@ h1 {
     padding: 30px; /* Reduce padding for smaller screens */
   }
 
-  h1 {
+  .h1-signup {
     font-size: 28px; /* Reduce font size on small screens */
   }
 
