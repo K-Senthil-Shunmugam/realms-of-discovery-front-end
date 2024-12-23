@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
-import axios from 'axios';  // Import axios
+import axios from 'axios';
 import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import './Play.css';
 
 const Play = () => {
   const [textInput, setTextInput] = useState('');
   const [response, setResponse] = useState(null);
   const [cookies, remove] = useCookies(['accountDetails']);
+  const navigate = useNavigate(); // Initialize navigate
 
   const handleInputChange = (event) => {
     setTextInput(event.target.value);
@@ -18,14 +20,13 @@ const Play = () => {
       const data = { userId, textInput };
 
       try {
-        // Use axios to send a POST request
         const result = await axios.post('http://192.168.192.25:5000/api/move', data, {
           headers: {
             'Content-Type': 'application/json',
           },
         });
 
-        setResponse(result.data); // Assuming the response contains roomimageBase64, mapBase64, replyText
+        setResponse(result.data);
       } catch (error) {
         console.error('Error during API request:', error);
       }
@@ -35,6 +36,11 @@ const Play = () => {
   return (
     <div className="play-page">
       <div className="crt-container">
+        {/* Back Button */}
+        <button className="back-button" onClick={() => navigate('/')}>
+          Back to Home
+        </button>
+
         {/* Room Image Display */}
         <div className="image-display">
           <img 
@@ -43,6 +49,7 @@ const Play = () => {
             className="play-image"
           />
         </div>
+
         {/* Display Text Section */}
         <div className="display-text-container">
           <div className="text-display">
