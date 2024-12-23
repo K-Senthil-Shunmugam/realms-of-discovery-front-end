@@ -39,10 +39,9 @@ const Home = () => {
           <p className="home-paragraph">
           Embark on a thrilling journey across six mystical realms, each filled with unique challenges, hidden secrets, and ancient powers. As a daring adventurer, 
           your quest is to uncover the lost essences of the cosmos and restore balance to the universe. Prepare to test your wits, face formidable foes, and solve complex 
-          puzzles as you explore diverse environments, from fiery mountains to ocean depths.  </p>        
+          puzzles as you explore diverse environments, from fiery mountains to ocean depths.  
           
-         <h2> What Awaits You:</h2>
-          <ul>
+         What Awaits You:
           🌍 Earth Realm: Venture into the heart of nature, where you'll battle cunning enemies, traverse rugged landscapes, and discover the Earth Core—a powerful artifact that will help you unlock new realms.
 
           🌕 Moon Realm: Enter a world where darkness meets light, and illusion hides the truth. Solve riddles, face spectral beings, and uncover the mysteries hidden beneath the Moon's surface.
@@ -55,7 +54,7 @@ const Home = () => {
 
           🔥 Inferno Realm: Enter the fiery heart of the world. With molten rivers, fiery beasts, and intense trials, you'll need to conquer the Infernal Overlord and collect the Flame Core to complete your journey and restore the balance of the realms.
 
-         </ul>
+          </p>        
         </section>
 
         {/* Section 2 - Features */}
