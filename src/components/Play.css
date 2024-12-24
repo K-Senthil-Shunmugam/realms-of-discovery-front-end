@@ -173,6 +173,42 @@ html, body {
   box-shadow: 0 0 20px #60a5fa;
 }
 
+/* Map Popup Styling */
+.map-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.map-popup-image {
+  max-width: 90%;
+  max-height: 90%;
+  border: 5px solid #3b82f6;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #3b82f6;
+}
+
+.close-popup {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 3rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.close-popup:hover {
+  color: #60a5fa;
+}
+
 
 /* Responsive design for small screens */
 @media (max-width: 768px) {

@@ -8,6 +8,7 @@ const Play = () => {
   const [textInput, setTextInput] = useState('');
   const [response, setResponse] = useState(null);
   const [cookies, remove] = useCookies(['accountDetails']);
+  const [isMapPopupOpen, setIsMapPopupOpen] = useState(false); // State for popup
   const navigate = useNavigate(); // Initialize navigate
 
   const handleInputChange = (event) => {
@@ -33,6 +34,10 @@ const Play = () => {
     }
   };
 
+  const toggleMapPopup = () => {
+    setIsMapPopupOpen(!isMapPopupOpen);
+  };
+
   return (
     <div className="play-page">
       <div className="crt-container">
@@ -43,9 +48,9 @@ const Play = () => {
 
         {/* Room Image Display */}
         <div className="image-display">
-          <img 
-            src={response?.roomImageBase64 ? `${response.roomImageBase64}` : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/9TgZmkAAAAASUVORK5CYII='} 
-            alt="Room" 
+          <img
+            src={response?.roomImageBase64 ? `${response.roomImageBase64}` : 'data:image/png;base64,...'}
+            alt="Room"
             className="play-image"
           />
         </div>
@@ -58,13 +63,25 @@ const Play = () => {
         </div>
 
         {/* Map Image Display */}
-        <div className="map-display">
-          <img 
-            src={response?.mapBase64 ? `${response.mapBase64}` : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/9TgZmkAAAAASUVORK5CYII='} 
-            alt="Map" 
+        <div className="map-display" onClick={toggleMapPopup}>
+          <img
+            src={response?.mapBase64 ? `${response.mapBase64}` : 'data:image/png;base64,...'}
+            alt="Map"
             className="map-image"
           />
         </div>
+
+        {/* Fullscreen Popup for Map */}
+        {isMapPopupOpen && (
+          <div className="map-popup">
+            <span className="close-popup" onClick={toggleMapPopup}>&times;</span>
+            <img
+              src={response?.mapBase64 ? `${response.mapBase64}` : 'data:image/png;base64,...'}
+              alt="Map Fullscreen"
+              className="map-popup-image"
+            />
+          </div>
+        )}
 
         {/* Input Text Section */}
         <div className="input-text-container">
