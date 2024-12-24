@@ -115,7 +115,7 @@ const Home = () => {
             {/* Team Member 1 */}
             <div className="team-member-card">
               <img src="/images/team/senthil.jpg" alt="Senthil" className="team-member-img" />
-              <h3 className="team-member-name">Senthil Shunmugam K</h3>
+              <h3 className="team-member-name">Senthil Shunmugam</h3>
               <div className="team-member-links">
                 <a href="https://www.linkedin.com/in/senthil-shunmugam-b85071268/" target="_blank" rel="noopener noreferrer" className="team-link">LinkedIn</a>
                 <a href="https://github.com/K-Senthil-Shunmugam/" target="_blank" rel="noopener noreferrer" className="team-link">GitHub</a>
@@ -125,7 +125,7 @@ const Home = () => {
             {/* Team Member 2 */}
             <div className="team-member-card">
               <img src="/images/team/harshini.jpg" alt="Harshini" className="team-member-img" />
-              <h3 className="team-member-name">Harshini V</h3>
+              <h3 className="team-member-name">Harshini Vivek</h3>
               <div className="team-member-links">
                 <a href="https://www.linkedin.com/in/harshini-vivek/" target="_blank" rel="noopener noreferrer" className="team-link">LinkedIn</a>
                 <a href="https://github.com/mvharsh/" target="_blank" rel="noopener noreferrer" className="team-link">GitHub</a>
@@ -135,7 +135,7 @@ const Home = () => {
             {/* Team Member 3 */}
             <div className="team-member-card">
               <img src="/images/team/varsha.jpg" alt="Varsha" className="team-member-img" />
-              <h3 className="team-member-name">Varsha L</h3>
+              <h3 className="team-member-name">Varsha Narayanan</h3>
               <div className="team-member-links">
                 <a href="https://www.linkedin.com/in/varsha-narayanan-l/" target="_blank" rel="noopener noreferrer" className="team-link">LinkedIn</a>
                 <a href="https://github.com/Varsha1903/" target="_blank" rel="noopener noreferrer" className="team-link">GitHub</a>
