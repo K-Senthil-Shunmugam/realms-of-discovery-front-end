@@ -156,6 +156,20 @@ body {
   color: #A9CCE3; /* Pale Blue */
 }
 
+.team-link img {
+  width: 40px; /* Adjust the size as needed */
+  height: 40px; /* Keep it equal to width for a perfect circle */
+  border-radius: 50%; /* Makes the image round */
+  object-fit: cover; /* Ensures the image scales properly inside the circle */
+  border: 2px solid #ccc; /* Optional: Add a border for better visibility */
+  transition: transform 0.3s ease; /* Optional: Add hover effect */
+}
+
+.team-link img:hover {
+  transform: scale(1.1); /* Optional: Slight zoom on hover */
+}
+
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .navbar-btn {
