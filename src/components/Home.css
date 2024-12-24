@@ -199,13 +199,14 @@ body {
 /* Main container holding the realm cards */
 .realms-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
-  grid-template-rows: repeat(2, auto); /* 2 rows */
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 equal columns */
+  grid-auto-rows: auto; /* Automatic row heights based on content */
   gap: 20px; /* Space between cards */
-  margin-top: 20px;
-  width: 100%; /* Ensure the container spans the screen width */
-  padding: 10px; /* Add padding for spacing */
-  box-sizing: border-box; /* Include padding and border in width calculations */
+  margin: 0 auto; /* Center the grid on the page */
+  padding: 20px; /* Space inside the container */
+  max-width: 1200px; /* Constrain the grid width */
+  width: 100%; /* Allow the grid to adapt to screen width */
+  box-sizing: border-box; /* Include padding in width calculations */
 }
 
 /* Styling for each individual realm card */
@@ -216,7 +217,7 @@ body {
   background-color: #aedfff;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for transform and shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .realm-card:hover {
@@ -246,9 +247,14 @@ body {
 }
 
 /* Responsive Design for Smaller Screens */
+@media (max-width: 1024px) {
+  .realms-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr)); /* 2 columns for medium screens */
+  }
+}
+
 @media (max-width: 768px) {
   .realms-container {
-    grid-template-columns: 1fr; /* Stack all containers vertically */
-    grid-template-rows: auto; /* Allow rows to adjust automatically */
+    grid-template-columns: repeat(1, minmax(0, 1fr)); /* Stack all cards vertically */
   }
 }
