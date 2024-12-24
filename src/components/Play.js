@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useCookies } from 'react-cookie';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import './Play.css';
+import { FaMapMarkedAlt } from 'react-icons/fa'; // Import map icon
 
 const Play = () => {
   const [textInput, setTextInput] = useState('');
   const [response, setResponse] = useState(null);
-  const [cookies, remove] = useCookies(['accountDetails']);
-  const [isMapPopupOpen, setIsMapPopupOpen] = useState(false); // State for popup
-  const navigate = useNavigate(); // Initialize navigate
+  const [cookies] = useCookies(['accountDetails']);
+  const [showMapImage, setShowMapImage] = useState(false); // Toggle for map preview
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     setTextInput(event.target.value);
@@ -34,10 +35,6 @@ const Play = () => {
     }
   };
 
-  const toggleMapPopup = () => {
-    setIsMapPopupOpen(!isMapPopupOpen);
-  };
-
   return (
     <div className="play-page">
       <div className="crt-container">
@@ -48,9 +45,13 @@ const Play = () => {
 
         {/* Room Image Display */}
         <div className="image-display">
-          <img
-            src={response?.roomImageBase64 ? `${response.roomImageBase64}` : 'data:image/png;base64,...'}
-            alt="Room"
+          <img 
+            src={
+              response?.roomImageBase64
+                ? `${response.roomImageBase64}`
+                : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/9TgZmkAAAAASUVORK5CYII='
+            } 
+            alt="Room" 
             className="play-image"
           />
         </div>
@@ -62,23 +63,19 @@ const Play = () => {
           </div>
         </div>
 
-        {/* Map Image Display */}
-        <div className="map-display" onClick={toggleMapPopup}>
-          <img
-            src={response?.mapBase64 ? `${response.mapBase64}` : 'data:image/png;base64,...'}
-            alt="Map"
-            className="map-image"
-          />
+        {/* Map Icon Display */}
+        <div className="map-icon-container" onClick={() => setShowMapImage(true)}>
+          <FaMapMarkedAlt className="map-icon" />
+          <p>Open Map</p>
         </div>
 
-        {/* Fullscreen Popup for Map */}
-        {isMapPopupOpen && (
-          <div className="map-popup">
-            <span className="close-popup" onClick={toggleMapPopup}>&times;</span>
-            <img
-              src={response?.mapBase64 ? `${response.mapBase64}` : 'data:image/png;base64,...'}
-              alt="Map Fullscreen"
-              className="map-popup-image"
+        {/* Full-screen Map Preview */}
+        {showMapImage && (
+          <div className="map-overlay" onClick={() => setShowMapImage(false)}>
+            <img 
+              src="harshini.jpg" 
+              alt="Map Full View" 
+              className="map-fullscreen"
             />
           </div>
         )}
