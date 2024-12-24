@@ -85,7 +85,7 @@ html, body {
 }
 
 .play-text {
-  color: #60a5fa; /* Softer blue for text */
+  color: #fefefe; /* Softer blue for text */
   font-size: 1.2rem;
 }
 
@@ -98,7 +98,7 @@ html, body {
   position: absolute;
   top: 20px;
   right: 20px;
-  border: 3px solid #3b82f6;
+  border: 3px solid #8eb9ff;
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.7);
 }
