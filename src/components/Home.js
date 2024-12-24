@@ -127,8 +127,8 @@ const Home = () => {
               <img src="/images/team/harshini.jpg" alt="Harshini" className="team-member-img" />
               <h3 className="team-member-name">Harshini Vivek</h3>
               <div className="team-member-links">
-                <a href="https://www.linkedin.com/in/harshini-vivek/" target="_blank" rel="noopener noreferrer" className="team-link"><img src="/images/logo/linkedin.jpg" alt="Linkedin"/></a>
-                <a href="https://github.com/mvharsh/" target="_blank" rel="noopener noreferrer" className="team-link"><img src="/images/logo/github.jpg" alt="Github"/></a>
+                <a href="https://www.linkedin.com/in/harshini-vivek/" target="_blank" rel="noopener noreferrer" className="team-link"><img src="/images/logos/linkedin.jpg" alt="Linkedin"/></a>
+                <a href="https://github.com/mvharsh/" target="_blank" rel="noopener noreferrer" className="team-link"><img src="/images/logos/github.jpg" alt="Github"/></a>
               </div>
             </div>
 
