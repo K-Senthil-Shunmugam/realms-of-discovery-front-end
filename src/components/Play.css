@@ -69,8 +69,6 @@ html, body {
 .play-image {
   width: 40vw;
   max-width: 750px;
-  height: 40vw;
-  max-height: 750px;
   height: 300px;
   object-fit: cover;
   border: 5px solid #3b82f6; /* Border color matches */
