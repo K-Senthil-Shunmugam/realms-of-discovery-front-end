@@ -155,7 +155,7 @@ html, body {
 
 .back-button {
   position: absolute;
-  top: 20px;
+  bottom: 20px;
   left: 20px;
   padding: 10px 20px;
   font-size: 1rem;
