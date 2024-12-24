@@ -1,21 +1,24 @@
 /* Home Page Specific Styles */
 
-html, body {
-  margin: 0;
-  padding: 0;
-  height: 100%; /* Ensures the html and body take up the full height */
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background-image: linear-gradient(45deg, #0A2540, #1D4E89, #3A7CA5);
-  background-size: 400% 400%;
-  animation: gradientAnimation 10s ease infinite;
+  margin: 0;
+  padding: 0;
+}
+
+.home-page-body {
   font-family: 'Press Start 2P', cursive;
+  background-color: #0A2540; /* Dark Navy Blue */
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: 100%; /* Ensures body can expand with content */
-  overflow-x: hidden; /* Prevents horizontal scrolling if animations create overflow */
+  height: 100vh;
+  background-image: linear-gradient(45deg, #0A2540, #1D4E89, #3A7CA5);
+  background-size: 400% 400%;
+  animation: gradientAnimation 10s ease infinite;
 }
 
 @keyframes gradientAnimation {
@@ -28,15 +31,6 @@ body {
   100% {
     background-position: 0% 50%;
   }
-}
-
-.home-page-body {
-  width: 100%; /* Ensure it spans the entire page width */
-  flex-grow: 1; /* Ensures it grows with the body */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center; /* Center the content vertically */
 }
 
 /* Navbar */
