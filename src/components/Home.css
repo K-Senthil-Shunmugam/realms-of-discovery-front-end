@@ -11,7 +11,7 @@ body {
 
 .home-page-body {
   font-family: 'Press Start 2P', cursive;
-  background-color: #0A2540; /* Dark Navy Blue */
+  background-color:linear-gradient(45deg, #0A2540, #1D4E89, #3A7CA5); /* Dark Navy Blue */
   display: flex;
   flex-direction: column;
   align-items: center;
