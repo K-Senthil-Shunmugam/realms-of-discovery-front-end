@@ -199,10 +199,13 @@ body {
 /* Main container holding the realm cards */
 .realms-container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 columns for responsiveness */
+  grid-template-columns: repeat(3, 1fr); /* Exactly 3 columns */
   grid-template-rows: repeat(2, auto); /* 2 rows */
-  gap: 20px;
+  gap: 20px; /* Space between cards */
   margin-top: 20px;
+  width: 100%; /* Ensure the container spans the screen width */
+  padding: 10px; /* Add padding for spacing */
+  box-sizing: border-box; /* Include padding and border in width calculations */
 }
 
 /* Styling for each individual realm card */
@@ -240,4 +243,12 @@ body {
   font-size: 1rem;
   margin-top: 10px;
   color: #555;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+  .realms-container {
+    grid-template-columns: 1fr; /* Stack all containers vertically */
+    grid-template-rows: auto; /* Allow rows to adjust automatically */
+  }
 }
