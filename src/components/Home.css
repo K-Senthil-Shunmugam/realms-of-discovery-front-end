@@ -200,6 +200,7 @@ body {
 .realms-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr); /* 3 columns for responsiveness */
+  grid-template-rows: repeat(2, auto); /* 2 rows */
   gap: 20px;
   margin-top: 20px;
 }
