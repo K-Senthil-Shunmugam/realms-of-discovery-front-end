@@ -3,15 +3,15 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: 'Press Start 2P', cursive; /* Retro 8-bit font */
-  background-color: #0a2540;
+  background: linear-gradient(135deg, #0a2540, #1e3a8a, #3b82f6, #60a5fa, #93c5fd); /* Gradient from dark blue to light blue */
+  background-size: 400% 400%; /* Make the gradient larger to create animation effect */
+  animation: gradientAnimation 10s ease infinite; /* Animated gradient */
+  height: 100vh; /* Full viewport height */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-image: linear-gradient(45deg, #0a2540, #1e3a8a); /* Gradient for background */
-  background-size: 400% 400%;
-  animation: gradientAnimation 10s ease infinite; /* Animated gradient */
 }
+
 
 @keyframes gradientAnimation {
   0% {
