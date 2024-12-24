@@ -40,7 +40,7 @@ const Play = () => {
       <div className="crt-container">
         {/* Back Button */}
         <button className="back-button" onClick={() => navigate('/')}>
-          Back to Home
+          Back
         </button>
 
         {/* Room Image Display */}
