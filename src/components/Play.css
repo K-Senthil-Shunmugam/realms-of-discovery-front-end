@@ -36,7 +36,7 @@ html, body {
 }
 
 .crt-container {
-  background: linear-gradient(135deg, #0a2540, #1e3a8a, #3b82f6, #60a5fa, #93c5fd); /* Gradient from dark blue to light blue */
+  background: linear-gradient(135deg, #042444, #0b1b49, #063683, #105bb8, #004a9f); /* Gradient from dark blue to light blue */
   /* Semi-transparent background with blue shade */
   width: 90vw; /* Scale to 90% of the viewport width */
   height: 90vh; /* Scale to 90% of the viewport height */
