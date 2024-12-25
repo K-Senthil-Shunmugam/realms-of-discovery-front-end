@@ -87,7 +87,7 @@ const Play = () => {
       setResponse(res.data.message); // Display save success message
     } catch (error) {
       console.error("Error saving game:", error);
-      setResponse("Error saving the game. Try again.");
+      setResponse("Error saving the game. Try Loading or Starting a new Game.");
     }
   };
 
@@ -175,9 +175,9 @@ const Play = () => {
 
         {/* Action Buttons */}
         <div className="action-buttons">
-          <button onClick={saveGame}>💾</button>
-          <button onClick={startGame}>🎮</button>
-          <button onClick={loadGame}>📂</button>
+          <button onClick={saveGame}>💾 Save</button>
+          <button onClick={startGame}>🎮 New Game</button>
+          <button onClick={loadGame}>📂 Load Game</button>
         </div>
       </div>
     </div>
