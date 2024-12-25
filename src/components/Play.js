@@ -1,67 +1,131 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useCookies } from 'react-cookie';
-import { useNavigate } from 'react-router-dom';
-import './Play.css';
-import { FaMapMarkedAlt } from 'react-icons/fa'; // Import map icon
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useCookies } from "react-cookie"; // To get cookies
+import { useNavigate } from "react-router-dom"; // To navigate back
+import { FaMapMarkedAlt } from "react-icons/fa"; // Map icon for full-screen map view
+import './Play.css'; // Assuming you have a CSS file for styling
 
 const Play = () => {
-  const [textInput, setTextInput] = useState('');
-  const [response, setResponse] = useState(null);
-  const [cookies] = useCookies(['accountDetails']);
-  const [showMapImage, setShowMapImage] = useState(false); // Toggle for map preview
-  const navigate = useNavigate();
+  const [action, setAction] = useState(""); // For user action input
+  const [gameState, setGameState] = useState(null); // Store game state (current room, etc.)
+  const [response, setResponse] = useState(""); // Store game responses like room descriptions and action results
+  const [isGameStarted, setIsGameStarted] = useState(false); // Flag for game start
+  const [showMapImage, setShowMapImage] = useState(false); // Toggle for full-screen map preview
+  const [cookies] = useCookies(["accountDetails"]); // To get account details from cookies
+  const navigate = useNavigate(); // To navigate to different pages
 
-  const handleInputChange = (event) => {
-    setTextInput(event.target.value);
-  };
+  // Get accountId from cookies
+  const accountId = cookies.accountDetails?.accountid;
 
-  const handleKeyPress = async (event) => {
-    if (event.key === 'Enter' && textInput.trim()) {
-      const userId = cookies.accountDetails.accountid;
-      const data = { userId, textInput };
-
-      try {
-        const result = await axios.post('http://192.168.192.25:5000/api/move', data, {
-          headers: {
-            'Content-Type': 'application/json',
-          },
-        });
-
-        setResponse(result.data);
-      } catch (error) {
-        console.error('Error during API request:', error);
-      }
+  useEffect(() => {
+    if (!accountId) {
+      navigate("/"); // Redirect if no account ID in cookies
     }
-  };
+  }, [accountId, navigate]);
 
-  const handleStartGame = async () => {
-    const accountId = cookies.accountDetails.accountid;
+  // Start a new game
+  const startGame = async () => {
+    if (!accountId) {
+      alert("Account ID is missing. Please log in.");
+      return;
+    }
+
     try {
-      const result = await axios.post('http://192.168.192.25:5000/api/start_game', { accountId });
-      setResponse(result.data);
+      const res = await axios.post("http://192.168.192.25:5000/start_game", { accountId });
+      setGameState(res.data.state);
+      setResponse(res.data.message);
+      setIsGameStarted(true);
     } catch (error) {
-      console.error('Error starting the game:', error);
+      console.error("Error starting game:", error);
+      setResponse("Error starting the game. Try again.");
     }
+  };
+
+  // Load an existing game
+  const loadGame = async () => {
+    if (!accountId) {
+      alert("Account ID is missing. Please log in.");
+      return;
+    }
+
+    try {
+      const res = await axios.post("http://192.168.192.25:5000/load_game", { accountId });
+      setGameState(res.data.state);
+      setResponse(res.data.message);
+      setIsGameStarted(true);
+    } catch (error) {
+      console.error("Error loading game:", error);
+      setResponse("No saved game found for this account.");
+    }
+  };
+
+  // Handle user actions like 'look around', 'go north', etc.
+  const handleAction = async () => {
+    if (!action) {
+      alert("Please enter an action.");
+      return;
+    }
+
+    try {
+      const res = await axios.post("http://192.168.192.25:5000/perform_action", {
+        accountId,
+        action,
+      });
+      setGameState(res.data.state);
+      setResponse(res.data.message); // Display the result (e.g., action result, updated room description)
+      setAction(""); // Clear the action input field
+    } catch (error) {
+      console.error("Error performing action:", error);
+      setResponse("Error processing the action. Try again.");
+    }
+  };
+
+  // Save the game state
+  const saveGame = async () => {
+    try {
+      const res = await axios.post("http://192.168.192.25:5000/save_game", { accountId });
+      setResponse(res.data.message); // Display save success message
+    } catch (error) {
+      console.error("Error saving game:", error);
+      setResponse("Error saving the game. Try again.");
+    }
+  };
+
+  // Exit the game and save the state
+  const exitGame = async () => {
+    try {
+      const res = await axios.post("http://192.168.192.25:5000/exit_game", { accountId });
+      setResponse(res.data.message); // Display exit and save message
+      setIsGameStarted(false); // End the game session
+      setGameState(null); // Clear the game state
+    } catch (error) {
+      console.error("Error exiting game:", error);
+      setResponse("Error exiting the game. Try again.");
+    }
+  };
+
+  // Handle back button click
+  const handleBack = () => {
+    navigate("/");
   };
 
   return (
     <div className="play-page">
       <div className="crt-container">
         {/* Back Button */}
-        <button className="back-button" onClick={() => navigate('/')}>
+        <button className="back-button" onClick={handleBack}>
           Back
         </button>
 
         {/* Room Image Display */}
         <div className="image-display">
-          <img 
+          <img
             src={
-              response?.roomImageBase64
-                ? `data:image/png;base64,${response.roomImageBase64}`
-                : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/9TgZmkAAAAASUVORK5CYII='
-            } 
-            alt="Room" 
+              gameState?.roomImageBase64
+                ? `data:image/png;base64,${gameState.roomImageBase64}`
+                : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/9TgZmkAAAAASUVORK5CYII="
+            }
+            alt="Room"
             className="play-image"
           />
         </div>
@@ -69,7 +133,7 @@ const Play = () => {
         {/* Display Text Section */}
         <div className="display-text-container">
           <div className="text-display">
-            <p className="play-text">{response?.replyText || ''}</p>
+            <p className="play-text">{response || ""}</p>
           </div>
         </div>
 
@@ -82,28 +146,33 @@ const Play = () => {
         {/* Full-screen Map Preview */}
         {showMapImage && (
           <div className="map-overlay" onClick={() => setShowMapImage(false)}>
-            <img 
-              src="/images/logos/map.jpeg" 
-              alt="Map Full View" 
-              className="map-fullscreen"
-            />
+            <img src="/images/logos/map.jpeg" alt="Map Full View" className="map-fullscreen" />
           </div>
         )}
 
-        {/* Input Text Section */}
+        {/* Input Text Section for Actions */}
         <div className="input-text-container">
           <input
             type="text"
-            value={textInput}
-            onChange={handleInputChange}
-            onKeyDown={handleKeyPress}
+            value={action}
+            onChange={(e) => setAction(e.target.value)}
+            placeholder="Enter your action (e.g., 'look around')"
             className="text-input"
-            placeholder="Enter your next move..."
           />
         </div>
 
-        {/* Start New Game Button */}
-        <button onClick={handleStartGame}>Start New Game</button>
+        {/* Action Buttons */}
+        <button onClick={handleAction}>Submit Action</button>
+        <button onClick={saveGame}>Save Game</button>
+        <button onClick={exitGame}>Exit Game</button>
+
+        {/* Game Start/Load Options */}
+        {!isGameStarted && (
+          <div>
+            <button onClick={startGame}>Start New Game</button>
+            <button onClick={loadGame}>Load Game</button>
+          </div>
+        )}
       </div>
     </div>
   );
