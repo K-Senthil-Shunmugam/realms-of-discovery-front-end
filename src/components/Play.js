@@ -77,8 +77,9 @@ const Play = () => {
       setResponse(res.data.message);
 
       if (res.data.roomImageBase64) {
-        console.log(res.data.roomImageBase64);
         setRoomImage(`data:image/png;base64,${res.data.roomImageBase64}`);
+        console.log(roomImage);
+
       }
        // Display the result (e.g., action result, updated room description)
       setAction(""); // Clear the action input field
