@@ -301,10 +301,17 @@ html, body {
     margin: 10px 0;
   }
 }
+
 .action-buttons {
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
+  align-items: center;
   margin-top: 20px;
+  position: absolute;
+  bottom: 100px; /* Adjust based on the map button location */
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .action-buttons button {
