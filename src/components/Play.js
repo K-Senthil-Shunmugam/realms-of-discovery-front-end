@@ -140,7 +140,7 @@ const Play = () => {
         <div className="image-display">
           <img
             src={
-              roomImage?.roomImage
+              roomImage
                 ? `data:image/png;base64,${roomImage}`
                 : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/9TgZmkAAAAASUVORK5CYII="
             }
