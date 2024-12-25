@@ -98,7 +98,6 @@ const Play = () => {
       setResponse(res.data.message); // Display exit and save message
       setIsGameStarted(false); // End the game session
       setGameState(null); // Clear the game state
-      
     } catch (error) {
       console.error("Error exiting game:", error);
       setResponse("Error exiting the game. Try again.");
@@ -175,9 +174,16 @@ const Play = () => {
 
         {/* Action Buttons */}
         <div className="action-buttons">
-          <button onClick={saveGame}>💾 Save</button>
-          <button onClick={startGame}>🎮 New Game</button>
-          <button onClick={loadGame}>📂 Load Game</button>
+          {!isGameStarted && (
+            <>
+              <button onClick={startGame}>🎮 New Game</button>
+              <button onClick={loadGame}>📂 Load Game</button>
+            </>
+          )}
+
+          {isGameStarted && (
+            <button onClick={saveGame}>💾 Save</button>
+          )}
         </div>
       </div>
     </div>
