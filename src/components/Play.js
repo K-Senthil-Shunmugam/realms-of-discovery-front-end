@@ -139,8 +139,8 @@ const Play = () => {
         <div className="image-display">
           <img
             src={
-              gameState?.roomImageBase64
-                ? `data:image/png;base64,${gameState.roomImageBase64}`
+              roomImage?.roomImage
+                ? `data:image/png;base64,${roomImage}`
                 : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/9TgZmkAAAAASUVORK5CYII="
             }
             alt="Room"
