@@ -76,7 +76,7 @@ const Play = () => {
       setAction(""); // Clear the action input field
     } catch (error) {
       console.error("Error performing action:", error);
-      setResponse("Error processing the action. Try again.");
+      setResponse("Error processing the action. Try Loading or Starting a new Game. ");
     }
   };
 
