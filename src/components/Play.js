@@ -98,23 +98,24 @@ const Play = () => {
       setResponse(res.data.message); // Display exit and save message
       setIsGameStarted(false); // End the game session
       setGameState(null); // Clear the game state
+      navigate("/"); // Navigate back to the home page
     } catch (error) {
       console.error("Error exiting game:", error);
       setResponse("Error exiting the game. Try again.");
     }
   };
 
-  // Handle back button click
+  // Handle back button click (combined with exit)
   const handleBack = () => {
-    navigate("/");
+    exitGame(); // Exit the game before navigating back
   };
 
   return (
     <div className="play-page">
       <div className="crt-container">
-        {/* Back Button */}
+        {/* Exit Game Button (combined with back) */}
         <button className="back-button" onClick={handleBack}>
-          Back
+          Exit Game
         </button>
 
         {/* Room Image Display */}
@@ -164,7 +165,6 @@ const Play = () => {
         {/* Action Buttons */}
         <button onClick={handleAction}>Submit Action</button>
         <button onClick={saveGame}>Save Game</button>
-        <button onClick={exitGame}>Exit Game</button>
 
         {/* Game Start/Load Options */}
         {!isGameStarted && (
