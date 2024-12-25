@@ -22,7 +22,7 @@ const Play = () => {
       const data = { userId, textInput };
 
       try {
-        const result = await axios.post('http://192.168.192.25:5000/api/move', data, {
+        const result = await axios.post('http://localhost:5000/api/move', data, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -32,6 +32,16 @@ const Play = () => {
       } catch (error) {
         console.error('Error during API request:', error);
       }
+    }
+  };
+
+  const handleStartGame = async () => {
+    const accountId = cookies.accountDetails.accountid;
+    try {
+      const result = await axios.post('http://localhost:5000/api/start_game', { accountId });
+      setResponse(result.data);
+    } catch (error) {
+      console.error('Error starting the game:', error);
     }
   };
 
@@ -48,7 +58,7 @@ const Play = () => {
           <img 
             src={
               response?.roomImageBase64
-                ? `${response.roomImageBase64}`
+                ? `data:image/png;base64,${response.roomImageBase64}`
                 : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/9TgZmkAAAAASUVORK5CYII='
             } 
             alt="Room" 
@@ -91,6 +101,9 @@ const Play = () => {
             placeholder="Enter your next move..."
           />
         </div>
+
+        {/* Start New Game Button */}
+        <button onClick={handleStartGame}>Start New Game</button>
       </div>
     </div>
   );
