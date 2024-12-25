@@ -110,6 +110,13 @@ const Play = () => {
     exitGame(); // Exit the game before navigating back
   };
 
+  // Handle Enter key press to submit action
+  const handleKeyDown = (e) => {
+    if (e.key === "Enter") {
+      handleAction(); // Call handleAction when Enter is pressed
+    }
+  };
+
   return (
     <div className="play-page">
       <div className="crt-container">
@@ -159,11 +166,11 @@ const Play = () => {
             onChange={(e) => setAction(e.target.value)}
             placeholder="Enter your action (e.g., 'look around')"
             className="text-input"
+            onKeyDown={handleKeyDown} // Attach the onKeyDown event handler
           />
         </div>
 
         {/* Action Buttons */}
-        <button onClick={handleAction}>Submit Action</button>
         <button onClick={saveGame}>Save Game</button>
 
         {/* Game Start/Load Options */}
