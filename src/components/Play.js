@@ -122,7 +122,7 @@ const Play = () => {
       <div className="crt-container">
         {/* Exit Game Button (combined with back) */}
         <button className="back-button" onClick={handleBack}>
-          🚪
+          Exit
         </button>
 
         {/* Room Image Display */}
@@ -148,7 +148,7 @@ const Play = () => {
         {/* Map Icon Display */}
         <div className="map-icon-container" onClick={() => setShowMapImage(true)}>
           <FaMapMarkedAlt className="map-icon" />
-          <p>🗺️</p>
+          <p>Map</p>
         </div>
 
         {/* Full-screen Map Preview */}
