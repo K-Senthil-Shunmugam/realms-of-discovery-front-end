@@ -75,7 +75,7 @@ const Play = () => {
       });
       setGameState(res.data.state);
       setResponse(res.data.message);
-
+      console.log(res.data.roomImageBase64);
       if (res.data.roomImageBase64) {
         setRoomImage(`data:image/png;base64,${res.data.roomImageBase64}`);
       }
