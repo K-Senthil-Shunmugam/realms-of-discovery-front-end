@@ -98,10 +98,13 @@ const Play = () => {
       setResponse(res.data.message); // Display exit and save message
       setIsGameStarted(false); // End the game session
       setGameState(null); // Clear the game state
-      navigate("/"); // Navigate back to the home page
+      
     } catch (error) {
       console.error("Error exiting game:", error);
       setResponse("Error exiting the game. Try again.");
+    }
+    finally{
+      navigate("/"); // Navigate back to the home page
     }
   };
 
