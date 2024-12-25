@@ -304,14 +304,13 @@ html, body {
 
 .action-buttons {
   display: flex;
-  flex-direction: column;
   justify-content: space-evenly;
-  align-items: center;
   margin-top: 20px;
   position: absolute;
-  bottom: 100px; /* Adjust based on the map button location */
+  bottom: 100px; /* Adjust the vertical position of the action buttons */
   left: 50%;
   transform: translateX(-50%);
+  width: 60%; /* You can adjust the width based on the number of buttons */
 }
 
 .action-buttons button {
