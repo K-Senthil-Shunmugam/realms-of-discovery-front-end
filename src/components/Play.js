@@ -22,7 +22,7 @@ const Play = () => {
       const data = { userId, textInput };
 
       try {
-        const result = await axios.post('http://localhost:5000/api/move', data, {
+        const result = await axios.post('http://192.168.192.25:5000/api/move', data, {
           headers: {
             'Content-Type': 'application/json',
           },
@@ -38,7 +38,7 @@ const Play = () => {
   const handleStartGame = async () => {
     const accountId = cookies.accountDetails.accountid;
     try {
-      const result = await axios.post('http://localhost:5000/api/start_game', { accountId });
+      const result = await axios.post('http://192.168.192.25:5000/api/start_game', { accountId });
       setResponse(result.data);
     } catch (error) {
       console.error('Error starting the game:', error);
