@@ -32,5 +32,7 @@ EXPOSE 3000
 # Configure React to listen on all network interfaces (0.0.0.0)
 ENV HOST=0.0.0.0
 
+# echo "hi"
+
 # Start React's development server
 CMD ["npm", "start"]
