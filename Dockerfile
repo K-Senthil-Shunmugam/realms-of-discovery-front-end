@@ -12,27 +12,22 @@ RUN npm install
 # Copy the rest of the application
 COPY . .
 
-# Development Stage (instead of using NGINX, we'll use React's dev server)
-FROM node:21 AS dev
+# Build the React app
+RUN npm run build
+
+# Production Stage
+FROM node:21 AS prod
 
 WORKDIR /app
 
-# Copy package.json and package-lock.json
-COPY package*.json ./
+# Install a simple static file server to serve the built app
+RUN npm install -g serve
 
-# Install dependencies
-RUN npm install
+# Copy the build output from the build stage
+COPY --from=build /app/build /app/build
 
-# Copy the rest of the application
-COPY . .
-
-# Expose port for React dev server
+# Expose port 3000 (default port for 'serve')
 EXPOSE 3000
 
-# Configure React to listen on all network interfaces (0.0.0.0)
-ENV HOST=0.0.0.0
-
-# echo "hi"
-
-# Start React's development server
-CMD ["npm", "start"]
+# Serve the built React app using the 'serve' command
+CMD ["serve", "-s", "build", "-l", "3000"]
