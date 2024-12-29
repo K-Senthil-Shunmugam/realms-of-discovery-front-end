@@ -17,6 +17,7 @@ const Signup = () => {
     let valid = true;
 
     // Reset errors
+    setError(null);
     setUsernameError('');
     setEmailError('');
     setPasswordError('');
