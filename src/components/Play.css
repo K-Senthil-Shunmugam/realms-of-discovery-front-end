@@ -83,8 +83,8 @@ html, body {
 }
 
 .play-image {
-  width: 40vw; 
-  height: 40vw; 
+  width: 20vw; 
+  height: 20vw; 
   max-width: 750px; 
   max-height: 750px; 
   object-fit: cover;
