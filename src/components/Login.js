@@ -85,7 +85,7 @@ const Login = () => {
         <button 
           onClick={handleLogin} 
           className="login-btn" 
-          disabled={!username || !password || usernameError || passwordError}
+          // disabled={!username || !password || usernameError || passwordError}
         >
           Login
         </button>
