@@ -16,10 +16,8 @@ const Login = () => {
   // Validate inputs
   const validateInputs = () => {
     let isValid = true;
-
-    setError(null);               // Clear the overall error message
-    setUsernameError('');         // Clear username error
-    setPasswordError('');         // Clear password error
+    setUsernameError('');
+    setPasswordError('');
 
     if (!username.trim()) {
       setUsernameError('Username is required.');
