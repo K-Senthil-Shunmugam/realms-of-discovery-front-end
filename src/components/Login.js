@@ -36,6 +36,12 @@ const Login = () => {
   };
 
   const handleLogin = async () => {
+
+    // Clear previous error states before trying again
+    setError(null);               // Clear the overall error message
+    setUsernameError('');         // Clear username error
+    setPasswordError('');         // Clear password error
+    
     if (!validateInputs()) {
       return; // Don't proceed with login if inputs are invalid
     }
