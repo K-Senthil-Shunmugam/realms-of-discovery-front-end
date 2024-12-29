@@ -41,6 +41,13 @@ const Signup = () => {
   };
 
   const handleSignup = async () => {
+
+    // Clear previous error states before trying again
+    setError(null);
+    setUsernameError('');
+    setEmailError('');
+    setPasswordError('');
+
     if (validateForm()) {
       try {
         const response = await axios.post('http://192.168.192.25:5000/auth/signup', {
