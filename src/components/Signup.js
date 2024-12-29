@@ -103,7 +103,7 @@ const Signup = () => {
         <button
           onClick={handleSignup}
           className="signup-btn"
-          disabled={!username || !email || !password || usernameError || emailError || passwordError}
+          // disabled={!username || !email || !password || usernameError || emailError || passwordError}
         >
           Sign Up
         </button>
