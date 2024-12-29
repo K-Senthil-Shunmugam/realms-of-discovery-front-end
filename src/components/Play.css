@@ -60,7 +60,7 @@ html, body {
   }
 }
 
-.image-display {
+/* .image-display {
   text-align: left;
   flex: 1;
   margin-bottom: 20px;
@@ -71,9 +71,27 @@ html, body {
   max-width: 750px;
   height: 300px;
   object-fit: cover;
-  border: 5px solid #3b82f6; /* Border color matches */
+  border: 5px solid #3b82f6; 
+  box-shadow: 0 0 10px #3b82f6;
+} */
+
+.image-display {
+  text-align: left;
+  flex: 1;
+  margin-bottom: 20px;
+  display: flex;
+}
+
+.play-image {
+  width: 40vw; 
+  height: 40vw; 
+  max-width: 750px; 
+  max-height: 750px; 
+  object-fit: cover;
+  border: 5px solid #3b82f6;
   box-shadow: 0 0 10px #3b82f6;
 }
+
 
 .text-display {
   color: #e0f2fe; /* Light blue for text */
