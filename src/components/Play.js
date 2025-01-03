@@ -77,7 +77,7 @@ const Play = () => {
       setResponse(res.data.message);
 
       if (res.data.roomImageBase64) {
-        setRoomImage(`data:image/png;base64,${res.data.roomImageBase64}`);
+        setRoomImage(`${res.data.roomImageBase64}`);
         console.log(roomImage);
 
       }
@@ -138,15 +138,15 @@ const Play = () => {
 
         {/* Room Image Display */}
         <div className="image-display">
-          <img
-            src={
-              roomImage && roomImage.startsWith('data:image/png;base64,')
-                ? roomImage
-                : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/9TgZmkAAAAASUVORK5CYII="
-            }
-            alt="Room"
-            className="play-image"
-          />
+        <img
+          src={
+            roomImage && (roomImage.startsWith('http') || roomImage.startsWith('https'))
+              ? roomImage
+              : "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/wcAAwAB/9TgZmkAAAAASUVORK5CYII="
+          }
+          alt="Room"
+          className="play-image"
+        />
         </div>
 
         {/* Display Text Section */}
