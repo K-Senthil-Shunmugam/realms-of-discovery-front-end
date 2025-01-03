@@ -12,7 +12,7 @@ The **Realms of Discovery - Frontend** is the client-side interface for an immer
 - **CI/CD Ready**: Configurations for continuous integration and deployment via GitLab.
 
 ## Prerequisites
-- **Node.js** (version 16 or higher)
+- **Node.js** (version 21 or higher)
 - **npm**
 
 ## Installation
