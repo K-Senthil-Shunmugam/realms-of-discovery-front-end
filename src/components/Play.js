@@ -165,7 +165,7 @@ const Play = () => {
         {/* Full-screen Map Preview */}
         {showMapImage && (
           <div className="map-overlay" onClick={() => setShowMapImage(false)}>
-            <img src="/images/logos/map.jpeg" alt="Map Full View" className="map-fullscreen" />
+            <img src="/images/logos/map.png" alt="Map Full View" className="map-fullscreen" />
           </div>
         )}
 
