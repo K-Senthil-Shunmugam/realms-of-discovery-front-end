@@ -13,7 +13,7 @@ const Play = () => {
   const [showMapImage, setShowMapImage] = useState(false); // Toggle for full-screen map preview
   const [cookies] = useCookies(["accountDetails"]); // To get account details from cookies
   const navigate = useNavigate(); // To navigate to different pages
-  const [roomImage, setRoomImage] = useState(""); // Store base64 image for the room
+  const [roomImage, setRoomImage] = useState(""); // Store image url for the room
 
 
   // Get accountId from cookies
@@ -76,8 +76,8 @@ const Play = () => {
       setGameState(res.data.state);
       setResponse(res.data.message);
 
-      if (res.data.roomImageBase64) {
-        setRoomImage(`${res.data.roomImageBase64}`);
+      if (res.data.roomImageurl) {
+        setRoomImage(`${res.data.roomImageurl}`);
         console.log(roomImage);
 
       }
